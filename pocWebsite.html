@@ -39,22 +39,78 @@
             position: relative;
         }
 
-        .cardColumn {
-            width: 25%;
-            align-items: stretch;
+        .card {
+            height: 90%;
+            text-align: center;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            -webkit-box-shadow: 0 0 10px 10px #cccccc;
+            -moz-box-shadow: 0 0 10px 10px #cccccc;
+            box-shadow: 0 0 10px 10px #cccccc;
         }
 
-        .card {
-            height: 100%;
+        .ownername,
+        .languagetext,
+        .phone-number {
+            text-align: end;
+        }
+
+        .ownername {
+            font-size: x-large;
+        }
+
+        .languagetext {
+            font-size: large;
+        }
+
+        .phone-number {
+            color: lightgreen;
+        }
+
+        .sitename {
+            font-size: xx-large;
+        }
+
+        .descriptivetext,
+        .categorytext {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 1%;
+        }
+
+        .descriptivetext {
+            font-size: large;
             text-align: center;
+        }
+
+        .descriptivetext::first-letter {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #f57c20;
+        }
+
+        .categorytext {
+            font-size: xx-large;
+            text-align: center;
+            color: #f57c20;
+        }
+
+        .formcard {
+            border: #fd9d0d;
+            background-color: #88c9ff;
+            text-align: center;
+            padding: 4%;
+            margin: 4%;
+            -webkit-box-shadow: 0 0 15px 15px #cccccc;
+            -moz-box-shadow: 0 0 15px 15px #cccccc;
+            box-shadow: 0 0 15px 15px #cccccc;
+            z-index: 1;
         }
 
         #auto,
         #home,
         #commercial,
         #life {
-            height: 100%;
-            background-color: #3e87f5;
+            background-color: #2b35ca;
         }
 
         .card-img-top {
@@ -72,44 +128,50 @@
 </head>
 
 <body>
-</body>
 
 </html>
-<div class="container-fluid p-5 bg-primary text-white">
+<div class="container-fluid p-5 bg-primary text-white overflow: auto">
     <div class="row d-flex align-items-end flex-row">
-        <img src="..." class="rounded float-left">
-        <div class="col">
-            <h1 class="text-start">Family First Insurance Oregon</h1>
-            <h4 class="text-start">Providing Family Focused Coverage.</h4>
+        <div class="col col-sm-6 float-start">
+            <div class="row float-start">
+                <div class="col col-sm-3 align-self: bottom">
+                    <img src="..." class="icon">
+                </div>
+                <div class="col col-sm-9">
+                    <div class="sitename">Family First Insurance Oregon</div>
+                    <div class="slogan">Providing Family Focused Coverage.</div>
+                </div>
+            </div>
         </div>
-        <div class="col float-end">
-            <h2 class="text-end">Javier De La O Bailon</h2>
+        <div class="col col-sm-6 float-end">
             <div class="row float-end">
-                <h6 class="text-end">503-313-1942</h6>
+                <div class="ownername">Javier De La O Bailon</div>
+                <div class="languagetext">¡se habla español!</div>
+                <div class="phone-number" class="text-end">503-313-1942</div>
             </div>
         </div>
     </div>
 </div>
-<div class="container mt-5">
+
+<div class="container mt-12">
     <div class="row">
         <div class="col-xl-12">
-            <h3 class="text-center">What type of insurance are you looking for?</h3>
+            <h3 class="categorytext">Find Coverage:</h3>
         </div>
     </div>
     <div class="row">
-        <div class="cardColumn">
-            <div class="card" style="">
+        <div class="cardColumn col-lg-3 col-sm-3">
+            <div class="card">
                 <img src="https://previews.123rf.com/images/victor85/victor852001/victor85200100003/138291218-car-line-icon-minimalist-icon-isolated-on-white-background-car-simple-silhouette-web-site-page-and-m.jpg"
                     class="card-img-top" alt="...">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title mt-auto">Auto Insurance</h5>
-                    <button class="btn btn-primary mt-auto" id="autobtn" style="btn btn-primary"
-                        onclick="openTab(event, 'auto')">Auto</button>
+                    <button class="btn btn-primary mt-auto" id="autobtn" onclick="openTab(event, 'auto')">Auto</button>
                 </div>
             </div>
         </div>
-        <div class="cardColumn ">
-            <div class="card" style="">
+        <div class="cardColumn col-lg-3 col-sm-3">
+            <div class="card">
                 <img src="https://static.vecteezy.com/system/resources/previews/004/963/992/original/minimalist-house-design-illustration-vector.jpg"
                     class="card-img-top" alt="...">
                 <div class="card-body d-flex flex-column">
@@ -118,8 +180,8 @@
                 </div>
             </div>
         </div>
-        <div class="cardColumn">
-            <div class="card" style="">
+        <div class="cardColumn col-lg-3 col-sm-3">
+            <div class="card">
                 <img src="https://image.shutterstock.com/image-vector/architecture-sketch-drawing-buildingcity-260nw-179448722.jpg"
                     class="card-img-top" alt="...">
                 <div class="card-body d-flex flex-column">
@@ -128,8 +190,8 @@
                 </div>
             </div>
         </div>
-        <div class="cardColumn">
-            <div class="card" style="">
+        <div class="cardColumn col-lg-3 col-sm-3">
+            <div class="card">
                 <img src="https://img.freepik.com/premium-vector/minimalist-hospital-building_450176-22.jpg?w=2000"
                     class="card-img-top" alt="...">
                 <div class="card-body d-flex flex-column">
@@ -145,11 +207,15 @@
     <div class="container mt-12">
         <div class='wrapper'>
             <div id="auto" class="cardcontent">
-                <h3 class="text-center">Car Insurance</h3>
-                <h6 class="text-center">Insuring your vehicle is both important financially, and required by law...</h6>
-                <div id="auto" class="card">
-                    <form id="fs-frm" name="registration-form" accept-charset="utf-8"
-                        action="https://formspree.io/f/mkneqgvb" method="post">
+                <h3 class="categorytext">Auto Insurance</h3>
+                <div class="descriptivetext">
+                    Auto insurance is a complicated matter. Many people have an insurance policy but
+                    do not exactly
+                    understand how they are covered or what they will do if they find themselves in the position of
+                    needing to utilize their insurance. Discover the basic types of car insurance and find out how to
+                    obtain the coverage you need for your particular situation.</div>
+                <div id="auto" class="formcard">
+                    <form id="fs-frm" name="registration-form" accept-charset="utf-8" action="" method="post">
                         <fieldset id="fs-frm-inputs">
                             <fieldset class="user-name">
                                 <legend>Full Name</legend>
@@ -193,189 +259,221 @@
                         <input type="submit" value="Register">
                     </form>
                 </div>
-                <h6 class="text-center">Accidents can happen at any time, and when things go wrong, you need a policy
-                    that does right by you...
-                </h6>
-            </div>
-            <div id="home" class="cardcontent">
-                <h3 class="text-center">Homeowners Insurance</h3>
-                <h6 class="text-center">You can never know what will happen to your home...</h6>
-                <div id="home" class="card">
-                    <form id="fs-frm" name="registration-form" accept-charset="utf-8"
-                        action="https://formspree.io/f/mkneqgvb" method="post">
-                        <fieldset id="fs-frm-inputs">
-                            <fieldset class="user-name">
-                                <legend>Full Name</legend>
-                                <div>
-                                    <input type="text" name="first" id="first-name" placeholder="First Name"
-                                        required="">
-                                    <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
-                                    <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
-                                </div>
-                            </fieldset>
-                            <fieldset class="dateofbirth">
-                                <legend>Date of Birth</legend>
-                                <div>
-                                    <input id="month" name="month" placeholder="Month" required="">
-                                    </input>
-                                    <input id="day" name="day" placeholder="Day">
-                                    </input>
-                                    <input id="year" name="year" placeholder="Year" required="">
-                                    </input>
-                                </div>
-                            </fieldset>
-                            <label for="drivers-license number">Oregon Driver License Number</label>
-                            <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#"
-                                required="">
-                            <div></div>
-                            <label for="street-address">Street Address</label>
-                            <input type="text" name="street" id="street-address" placeholder="Street" required="">
-                            <label for="email-address">Email Address</label>
-                            <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld"
-                                required="">
-                            <label for="phone-number">Phone Number</label>
-                            <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####"
-                                required="">
-                            <input type="hidden" name="_subject" id="email-subject"
-                                value="Registration Form Submission">
-                        </fieldset>
-                        <input type="submit" value="Register">
-                    </form>
+                <div class="categorytext">The Facts About Auto Insurance </div><br>
+
+                <div class="descriptivetext"> Insurance is a complicated matter. Many people have an insurance policy
+                    but
+                    do not exactly
+                    understand how they are covered or what they will do if they find themselves in the position of
+                    needing to utilize their insurance. Discover the basic types of car insurance and find out how
+                    to obtain the coverage you need for your particular situation. <br> </div>
+
+                <div class="descriptivetext">Coverage - This is the basic insurance type that covers your vehicle if you
+                    collide
+                    into
+                    something. This covers collisions with other cars as well as if you were to run into a wall,
+                    barrier
+                    or bridge. <br> </div>
+                <div class="descriptivetext">Comprehensive Coverage - This covers anything that may happen to your car
+                    that is not directly
+                    related to a collision. This would include things such as theft, fire, hitting a deer or
+                    vandalism.
+                    Liability Coverage - This type of coverage covers the damages when you are at fault in an
+                    accident
+                    and you damage someone else'’'s car or property. Liability coverage is often mandated by law, so
+                    it
+                    is important that you as the driver make certain you have an adequate amount. <br></div>
+                <div class="descriptivetext">Medical Payments - This is also called PIP in some states. Medical payments
+                    pay for any injuries
+                    to
+                    the driver or passengers that occur if an accident occurred while you were driving. Medical
+                    payment Insurance varies from state to state, so make certain you are covered
+                    as expected. <br> </div>
+                <div class="descriptivetext">
+                    Now that you understand a bit more about the different types of auto insurance available, you
+                    are
+                    probably ready to find the right coverage for you. The best way to do this is to work with an
+                    independent agency that will allow you to compare insurance quotes online. By doing this, you
+                    can
+                    rest assured you are getting the best deal as well as getting the personal attention you need.
                 </div>
-                <h6 class="text-center">Your home is your sanctuary, and losing it is bad enough, take the following
-                    steps to protect it today...
-                </h6>
             </div>
-            <div id="commercial" class="cardcontent">
-                <h3 class="text-center">Business and Commercial Insurance</h3>
-                <h6 class="text-center">Your business is the heart of a community, learn how to protect it today...</h6>
-                <div id="commercial" class="card">
-                    <form id="fs-frm" name="registration-form" accept-charset="utf-8"
-                        action="https://formspree.io/f/mkneqgvb" method="post">
-                        <fieldset id="fs-frm-inputs">
-                            <label for="business-name">Business Name</label>
-                            <input type="text" name="name" id="full-name" placeholder="Business Name" required="">
-                            <fieldset class="user-name">
-                                <legend>Full Name</legend>
-                                <div>
-                                    <input type="text" name="first" id="first-name" placeholder="First Name"
-                                        required="">
-                                    <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
-                                    <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
-                                </div>
-                            </fieldset>
-                            <fieldset class="dateofbirth">
-                                <legend>Date of Birth</legend>
-                                <div>
-                                    <input id="month" name="month" placeholder="Month" required="">
-                                    </input>
-                                    <input id="day" name="day" placeholder="Day">
-                                    </input>
-                                    <input id="year" name="year" placeholder="Year" required="">
-                                    </input>
-                                </div>
-                            </fieldset>
-                            <label for="drivers-license number">Oregon Driver License Number</label>
-                            <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#"
-                                required="">
-                            <label for="street-address">Street Address</label>
-                            <input type="text" name="street" id="street-address" placeholder="Street" required="">
-                            <label for="annual-reciepts">Annual Reciepts</label>
-                            <input type="text" name="annual-reciepts" id="annual-reciepts" placeholder="annual-reciepts"
-                                required="">
-                            <div></div>
-                            <label for="federal-id-number">Federal ID Number</label>
-                            <input type="number" name="federal-id-number" id="federal-id-number"
-                                placeholder="###-###-###" required="">
-                            <label for="employee-count">Number of Employees</label>
-                            <input type="number" name="employee-count" id="employee-count" placeholder="employee-count"
-                                required="">
-                            <label for="phone-number">Phone Number</label>
-                            <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####"
-                                required="">
-                            <input type="hidden" name="_subject" id="email-subject"
-                                value="Registration Form Submission">
+        </div>
+        <div id="home" class="cardcontent">
+            <h3 class="categorytext">Homeowners Insurance</h3>
+            <div class="descriptivetext">You can never know what will happen to your home...</div>
+            <div id="home" class="card">
+                <form id="fs-frm" name="registration-form" accept-charset="utf-8" action="" method="post">
+                    <fieldset id="fs-frm-inputs">
+                        <fieldset class="user-name">
+                            <legend>Full Name</legend>
+                            <div>
+                                <input type="text" name="first" id="first-name" placeholder="First Name" required="">
+                                <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
+                                <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
+                            </div>
                         </fieldset>
-                        <input type="submit" value="Register">
-                    </form>
-                </div>
-                <h6 class="text-center">Businesses need protection for their assets and products in this day and age...
-                </h6>
+                        <fieldset class="dateofbirth">
+                            <legend>Date of Birth</legend>
+                            <div>
+                                <input id="month" name="month" placeholder="Month" required="">
+                                </input>
+                                <input id="day" name="day" placeholder="Day">
+                                </input>
+                                <input id="year" name="year" placeholder="Year" required="">
+                                </input>
+                            </div>
+                        </fieldset>
+                        <label for="drivers-license number">Oregon Driver License Number</label>
+                        <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#"
+                            required="">
+                        <div></div>
+                        <label for="street-address">Street Address</label>
+                        <input type="text" name="street" id="street-address" placeholder="Street" required="">
+                        <label for="email-address">Email Address</label>
+                        <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld"
+                            required="">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####"
+                            required="">
+                        <input type="hidden" name="_subject" id="email-subject" value="Registration Form Submission">
+                    </fieldset>
+                    <input type="submit" value="Register">
+                </form>
             </div>
-            <div id="life" class="cardcontent">
-                <h3 class="text-center">Life Insurance</h3>
-                <h6 class="text-center">Health can take unexpected turns, and your loved ones may be left footing the
-                    bill...</h6>
-                <div id="life" class="card">
-                    <form id="fs-frm" name="registration-form" accept-charset="utf-8"
-                        action="https://formspree.io/f/mkneqgvb" method="post">
-                        <fieldset id="fs-frm-inputs">
-                            <fieldset class="user-name">
-                                <legend>Full Name</legend>
-                                <div>
-                                    <input type="text" name="first" id="first-name" placeholder="First Name"
-                                        required="">
-                                    <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
-                                    <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
-                                </div>
-                            </fieldset>
-                            <fieldset class="dateofbirth">
-                                <legend>Date of Birth</legend>
-                                <div>
-                                    <input id="month" name="month" placeholder="Month" required="">
-                                    </input>
-                                    <input id="day" name="day" placeholder="Day">
-                                    </input>
-                                    <input id="year" name="year" placeholder="Year" required="">
-                                    </input>
-                                </div>
-                            </fieldset>
-                            <label for="drivers-license number">Oregon Driver License Number</label>
-                            <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#"
-                                required="">
-                            <div></div>
-                            <label for="street-address">Street Address</label>
-                            <input type="text" name="street" id="street-address" placeholder="Street" required="">
-                            <label for="email-address">Email Address</label>
-                            <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld"
-                                required="">
-                            <div></div>
-                            <label for="phone-number">Phone Number</label>
-                            <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####"
-                                required="">
-                            <div></div>
-                            <label for="history-of-illness">History of Illness</label>
-                            <div></div>
-                            <textarea rows="2" name="note" id="note"
-                                placeholder="Include any medical information on any chronic illnesses"></textarea>
-                            <input type="hidden" name="_subject" id="email-subject"
-                                value="Registration Form Submission">
+            <div class="descriptivetext">Your home is your sanctuary, and losing it is bad enough, take the
+                following
+                steps to protect it today...
+            </div>
+        </div>
+        <div id="commercial" class="cardcontent">
+            <h3 class="categorytext">Business and Commercial Insurance</h3>
+            <div class="descriptivetext">Your business is the heart of a community, learn how to protect it today...
+            </div>
+            <div id="commercial" class="card">
+                <form id="fs-frm" name="registration-form" accept-charset="utf-8" action="" method="post">
+                    <fieldset id="fs-frm-inputs">
+                        <label for="business-name">Business Name</label>
+                        <input type="text" name="name" id="full-name" placeholder="Business Name" required="">
+                        <fieldset class="user-name">
+                            <legend>Full Name</legend>
+                            <div>
+                                <input type="text" name="first" id="first-name" placeholder="First Name" required="">
+                                <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
+                                <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
+                            </div>
                         </fieldset>
-                        <input type="submit" value="Register">
-                    </form>
-                </div>
-                <h6 class="text-center">Prepare your loved ones for the worst while living at your best...
-                </h6>
+                        <fieldset class="dateofbirth">
+                            <legend>Date of Birth</legend>
+                            <div>
+                                <input id="month" name="month" placeholder="Month" required="">
+                                </input>
+                                <input id="day" name="day" placeholder="Day">
+                                </input>
+                                <input id="year" name="year" placeholder="Year" required="">
+                                </input>
+                            </div>
+                        </fieldset>
+                        <label for="drivers-license number">Oregon Driver License Number</label>
+                        <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#"
+                            required="">
+                        <label for="street-address">Street Address</label>
+                        <input type="text" name="street" id="street-address" placeholder="Street" required="">
+                        <label for="annual-reciepts">Annual Reciepts</label>
+                        <input type="text" name="annual-reciepts" id="annual-reciepts" placeholder="annual-reciepts"
+                            required="">
+                        <div></div>
+                        <label for="federal-id-number">Federal ID Number</label>
+                        <input type="number" name="federal-id-number" id="federal-id-number" placeholder="###-###-###"
+                            required="">
+                        <label for="employee-count">Number of Employees</label>
+                        <input type="number" name="employee-count" id="employee-count" placeholder="employee-count"
+                            required="">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####"
+                            required="">
+                        <input type="hidden" name="_subject" id="email-subject" value="Registration Form Submission">
+                    </fieldset>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+            <div class="descriptivetext">Businesses need protection for their assets and products in this day and
+                age...
+            </div>
+        </div>
+        <div id="life" class="cardcontent">
+            <h3 class="categorytext">Life Insurance</h3>
+            <div class="descriptivetext">Health can take unexpected turns, and your loved ones may be left footing
+                the
+                bill...</div>
+            <div id="life" class="card">
+                <form id="fs-frm" name="registration-form" accept-charset="utf-8" action="" method="post">
+                    <fieldset id="fs-frm-inputs">
+                        <fieldset class="user-name">
+                            <legend>Full Name</legend>
+                            <div>
+                                <input type="text" name="first" id="first-name" placeholder="First Name" required="">
+                                <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
+                                <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
+                            </div>
+                        </fieldset>
+                        <fieldset class="dateofbirth">
+                            <legend>Date of Birth</legend>
+                            <div>
+                                <input id="month" name="month" placeholder="Month" required="">
+                                </input>
+                                <input id="day" name="day" placeholder="Day">
+                                </input>
+                                <input id="year" name="year" placeholder="Year" required="">
+                                </input>
+                            </div>
+                        </fieldset>
+                        <label for="drivers-license number">Oregon Driver License Number</label>
+                        <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#"
+                            required="">
+                        <div></div>
+                        <label for="street-address">Street Address</label>
+                        <input type="text" name="street" id="street-address" placeholder="Street" required="">
+                        <label for="email-address">Email Address</label>
+                        <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld"
+                            required="">
+                        <div></div>
+                        <label for="phone-number">Phone Number</label>
+                        <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####"
+                            required="">
+                        <div></div>
+                        <label for="history-of-illness">History of Illness</label>
+                        <div></div>
+                        <textarea rows="2" name="note" id="note"
+                            placeholder="Include any medical information on any chronic illnesses"></textarea>
+                        <input type="hidden" name="_subject" id="email-subject" value="Registration Form Submission">
+                    </fieldset>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+            <div class="descriptivetext">Prepare your loved ones for the worst while living at your best...
             </div>
         </div>
     </div>
+</div>
 </div>
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <div class="d-flex flex-row">
             <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30"
                 class="d-inline-block align-top" alt="">
-            <h6 class="text-center">Contact Me:
-            </h6>
+            <div class="descriptivetext">Contact Me:
+            </div>
             <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30"
                 class="d-inline-block align-top" alt="">
-            <h6 class="text-center">503-313-1942
-            </h6>
+            <div class="phone-number">503-313-1942
+            </div>
             <div></div>
             <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30"
                 class="d-inline-block align-top" alt="">
-            <h6 class="text-center">JARBG LLC Insurance, 1419 Parkside CT, Newberg, OR, 97132
-            </h6>
+            <div class="addresstext">JARBG LLC Insurance, 1419 Parkside CT, Newberg, OR, 97132
+            </div>
         </div>
     </a>
 </nav>
+</body>
