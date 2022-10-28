@@ -2,729 +2,780 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    function openTab(evt, tabName) {
-      // Declare all variables
-      let i, tabcontent, tablinks
+    let zipTest = /(^\d{5}$)|(^\d{5}-\d{4}$)/
+    let phoneTest = /^[+]?[\s./0-9]*[(]?[0-9]{1,4}[)]?[-\s./0-9]*$/
+    let emailTest = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    function submitAuto() {
 
-      // Get all elements with class="tabcontent" and hide them
-      tabcontent = document.getElementsByClassName("tabcontent")
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none"
+      let fName = document.getElementById("first-name-auto").value
+      let mName = document.getElementById("middle-name-auto").value
+      let lName = document.getElementById("last-name-auto").value
+      let mDate = document.getElementById("month-auto").value
+      let dDate = document.getElementById("day-auto").value
+      let yDate = document.getElementById("year-auto").value
+      let odlNumber = document.getElementById("drivers-license-auto").value
+      let viNumber = document.getElementById("vehicle-identification-number-auto").value
+      let addressOne = document.getElementById("address-one-auto").value
+      let addressTwo = document.getElementById("address-two-auto").value
+      let city = document.getElementById("city-auto").value
+      let state = document.getElementById("state-auto").value
+      let zip = document.getElementById("zip-auto").value
+      let phone = document.getElementById("phone-number-auto").value
+      let email = document.getElementById("email-address-auto").value
+      let valid = true
+
+      document.getElementById("first-name-auto-err").hidden = true
+      document.getElementById("middle-name-auto-err").hidden = true
+      document.getElementById("last-name-auto-err").hidden = true
+      if (!isValidNames(fName, mName, lName)) {
+        document.getElementById("first-name-auto-err").hidden = false
+        document.getElementById("middle-name-auto-err").hidden = false
+        document.getElementById("last-name-auto-err").hidden = false
+        console.log("out in name")
+        valid = false
       }
-
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablinks = document.getElementsByClassName("tablinks")
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "")
+      document.getElementById("month-auto-err").hidden = true
+      document.getElementById("day-auto-err").hidden = true
+      document.getElementById("year-auto-err").hidden = true
+      if (!isValidDOB(mDate, dDate, yDate)) {
+        document.getElementById("month-auto-err").hidden = false
+        document.getElementById("day-auto-err").hidden = false
+        document.getElementById("year-auto-err").hidden = false
+        console.log("out in date")
+        valid = false
       }
+      document.getElementById("drivers-license-auto-err").hidden = true
+      if (!isValidODL(odlNumber)) {
+        document.getElementById("drivers-license-auto-err").hidden = false
+        console.log("out in odl")
+        valid = false
+      }
+      document.getElementById("vehicle-identification-number-auto-err").hidden = true
+      if (!isValidVIN(viNumber)) {
+        document.getElementById("vehicle-identification-number-auto-err").hidden = false
+        console.log("out in vin")
+        valid = false
+      }
+      document.getElementById("address-one-auto-err").hidden = true
+      if (addressOne.trim() == "") {
+        document.getElementById("address-one-auto-err").hidden = false
+        console.log("out in address")
+        valid = false
+      }
+      document.getElementById("city-auto-err").hidden = true
+      if (city.trim() == "" || !isAlphaNumeric(city.trim())) {
+        document.getElementById("city-auto-err").hidden = false
+        console.log("out in city")
+        valid = false
+      }
+      document.getElementById("state-auto-err").hidden = true
+      if (state.trim() == "") {
+        document.getElementById("state-auto-err").hidden = false
+        console.log("out in state")
+        valid = false
+      }
+      document.getElementById("zip-auto-err").hidden = true
+      if (!zipTest.test(zip)) {
+        document.getElementById("zip-auto-err").hidden = false
+        console.log("out in zip")
+        valid = false
+      }
+      document.getElementById("email-address-auto-err").hidden = true
+      if (!emailTest.test(email)) {
+        document.getElementById("email-address-auto-err").hidden = false
+        console.log("out in email")
+        valid = false
+      }
+      document.getElementById("phone-number-auto-err").hidden = true
+      if (!phoneTest.test(phone)) {
+        document.getElementById("phone-number-auto-err").hidden = false
+        console.log("out in phone")
+        valid = false
+      }
+      if (!valid) return
 
-      // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(tabName).style.display = "block"
-      evt.currentTarget.className += " active"
+
+      document.getElementById("first-name-auto-hidden").value = fName
+      document.getElementById("middle-name-auto-hidden").value = mName
+      document.getElementById("last-name-auto-hidden").value = lName
+      document.getElementById("month-auto-hidden").value = mDate
+      document.getElementById("day-auto-hidden").value = dDate
+      document.getElementById("year-auto-hidden").value = yDate
+      document.getElementById("drivers-license-auto-hidden").value = odlNumber
+      document.getElementById("vehicle-identification-number-auto-hidden").value = viNumber
+      document.getElementById("address-one-auto-hidden").value = addressOne
+      document.getElementById("address-two-auto-hidden").value = addressTwo
+      document.getElementById("city-auto-hidden").value = city
+      document.getElementById("state-auto-hidden").value = state
+      document.getElementById("zip-auto-hidden").value = zip
+      document.getElementById("phone-number-auto-hidden").value = phone
+      document.getElementById("email-address-auto-hidden").value = email
+
     }
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById("autobtn").click()
-    }, false)
+    function submitHome() {
+      let fName = document.getElementById("first-name-home").value
+      let mName = document.getElementById("middle-name-home").value
+      let lName = document.getElementById("last-name-home").value
+      let mDate = document.getElementById("month-home").value
+      let dDate = document.getElementById("day-home").value
+      let yDate = document.getElementById("year-home").value
+      let odlNumber = document.getElementById("drivers-license-home").value
+      let addressOne = document.getElementById("address-one-home").value
+      let addressTwo = document.getElementById("address-two-home").value
+      let city = document.getElementById("city-home").value
+      let state = document.getElementById("state-home").value
+      let zip = document.getElementById("zip-home").value
+      let phone = document.getElementById("phone-number-home").value
+      let email = document.getElementById("email-address-home").value
+      let valid = true
+
+      document.getElementById("first-name-home-err").hidden = true
+      document.getElementById("middle-name-home-err").hidden = true
+      document.getElementById("last-name-home-err").hidden = true
+      if (!isValidNames(fName, mName, lName)) {
+        document.getElementById("first-name-home-err").hidden = false
+        document.getElementById("middle-name-home-err").hidden = false
+        document.getElementById("last-name-home-err").hidden = false
+        console.log("out in name")
+        valid = false
+      }
+      document.getElementById("month-home-err").hidden = true
+      document.getElementById("day-home-err").hidden = true
+      document.getElementById("year-home-err").hidden = true
+      if (!isValidDOB(mDate, dDate, yDate)) {
+        document.getElementById("month-home-err").hidden = false
+        document.getElementById("day-home-err").hidden = false
+        document.getElementById("year-home-err").hidden = false
+        console.log("out in date")
+        valid = false
+      }
+      document.getElementById("drivers-license-home-err").hidden = true
+      if (!isValidODL(odlNumber)) {
+        document.getElementById("drivers-license-home-err").hidden = false
+        console.log("out in odl")
+        valid = false
+      }
+      document.getElementById("address-one-home-err").hidden = true
+      if (addressOne.trim() == "") {
+        document.getElementById("address-one-home-err").hidden = false
+        console.log("out in address")
+        valid = false
+      }
+      document.getElementById("city-home-err").hidden = true
+      if (city.trim() == "" || !isAlphaNumeric(city.trim())) {
+        document.getElementById("city-home-err").hidden = false
+        console.log("out in city")
+        valid = false
+      }
+      document.getElementById("state-home-err").hidden = true
+      if (state.trim() == "") {
+        document.getElementById("state-home-err").hidden = false
+        console.log("out in state")
+        valid = false
+      }
+      document.getElementById("zip-home-err").hidden = true
+      if (!zipTest.test(zip)) {
+        document.getElementById("zip-home-err").hidden = false
+        console.log("out in zip")
+        valid = false
+      }
+      document.getElementById("email-address-home-err").hidden = true
+      if (!emailTest.test(email)) {
+        document.getElementById("email-address-home-err").hidden = false
+        console.log("out in email")
+        valid = false
+      }
+      document.getElementById("phone-number-home-err").hidden = true
+      if (!phoneTest.test(phone)) {
+        document.getElementById("phone-number-home-err").hidden = false
+        console.log("out in phone")
+        valid = false
+      }
+      if (!valid) return
+
+    }
+    function submitCommercial() {
+      let bName = document.getElementById("business-name-commercial").value
+      let fName = document.getElementById("first-name-commercial").value
+      let mName = document.getElementById("middle-name-commercial").value
+      let lName = document.getElementById("last-name-commercial").value
+      let mDate = document.getElementById("month-commercial").value
+      let dDate = document.getElementById("day-commercial").value
+      let yDate = document.getElementById("year-commercial").value
+      let odlNumber = document.getElementById("drivers-license-commercial").value
+      let addressOne = document.getElementById("address-one-commercial").value
+      let addressTwo = document.getElementById("address-two-commercial").value
+      let city = document.getElementById("city-commercial").value
+      let state = document.getElementById("state-commercial").value
+      let zip = document.getElementById("zip-commercial").value
+      let phone = document.getElementById("phone-number-commercial").value
+      let email = document.getElementById("email-address-commercial").value
+      let fedID = document.getElementById("federal-id-number-commercial").value
+      let employeeCount = document.getElementById("employee-count-commercial").value
+      let valid = true
+
+      document.getElementById("business-name-commercial-err").hidden = true
+      if (bName == "") {
+        document.getElementById("business-name-commercial-err").hidden = false
+        console.log("out in business name")
+        valid = false
+      }
+      document.getElementById("first-name-commercial-err").hidden = true
+      document.getElementById("middle-name-commercial-err").hidden = true
+      document.getElementById("last-name-commercial-err").hidden = true
+      if (!isValidNames(fName, mName, lName)) {
+        document.getElementById("first-name-commercial-err").hidden = false
+        document.getElementById("middle-name-commercial-err").hidden = false
+        document.getElementById("last-name-commercial-err").hidden = false
+        console.log("out in name")
+        valid = false
+      }
+      document.getElementById("month-commercial-err").hidden = true
+      document.getElementById("day-commercial-err").hidden = true
+      document.getElementById("year-commercial-err").hidden = true
+      if (!isValidDOB(mDate, dDate, yDate)) {
+        document.getElementById("month-commercial-err").hidden = false
+        document.getElementById("day-commercial-err").hidden = false
+        document.getElementById("year-commercial-err").hidden = false
+        console.log("out in date")
+        valid = false
+      }
+      document.getElementById("drivers-license-commercial-err").hidden = true
+      if (!isValidODL(odlNumber)) {
+        document.getElementById("drivers-license-commercial-err").hidden = false
+        console.log("out in odl")
+        valid = false
+      }
+      document.getElementById("address-one-commercial-err").hidden = true
+      if (addressOne.trim() == "") {
+        document.getElementById("address-one-commercial-err").hidden = false
+        console.log("out in address")
+        valid = false
+      }
+      document.getElementById("city-commercial-err").hidden = true
+      if (city.trim() == "" || !isAlphaNumeric(city.trim())) {
+        document.getElementById("city-commercial-err").hidden = false
+        console.log("out in city")
+        valid = false
+      }
+      document.getElementById("state-commercial-err").hidden = true
+      if (state.trim() == "") {
+        document.getElementById("state-commercial-err").hidden = false
+        console.log("out in state")
+        valid = false
+      }
+      document.getElementById("zip-commercial-err").hidden = true
+      if (!zipTest.test(zip)) {
+        document.getElementById("zip-commercial-err").hidden = false
+        console.log("out in zip")
+        valid = false
+      }
+      document.getElementById("federal-id-number-commercial-err").hidden = true
+      if (isNaN(parseInt(fedID.trim())) || fedID.trim().length != 9) {
+        document.getElementById("federal-id-number-commercial-err").hidden = false
+        console.log("out in fed id")
+        valid = false
+      }
+      document.getElementById("employee-count-commercial-err").hidden = true
+      if (isNaN(parseInt(fedID.trim()))) {
+        document.getElementById("employee-count-commercial-err").hidden = false
+        console.log("out in employee count")
+        valid = false
+      }
+      document.getElementById("email-address-commercial-err").hidden = true
+      if (!emailTest.test(email)) {
+        document.getElementById("email-address-commercial-err").hidden = false
+        console.log("out in email")
+        valid = false
+      }
+      document.getElementById("phone-number-commercial-err").hidden = true
+      if (!phoneTest.test(phone)) {
+        document.getElementById("phone-number-commercial-err").hidden = false
+        console.log("out in phone")
+        valid = false
+      }
+      if (!valid) return
+
+    }
+    function submitLife() {
+      let fName = document.getElementById("first-name-life").value
+      let mName = document.getElementById("middle-name-life").value
+      let lName = document.getElementById("last-name-life").value
+      let mDate = document.getElementById("month-life").value
+      let dDate = document.getElementById("day-life").value
+      let yDate = document.getElementById("year-life").value
+      let odlNumber = document.getElementById("drivers-license-life").value
+      let addressOne = document.getElementById("address-one-life").value
+      let addressTwo = document.getElementById("address-two-life").value
+      let city = document.getElementById("city-life").value
+      let state = document.getElementById("state-life").value
+      let zip = document.getElementById("zip-life").value
+      let phone = document.getElementById("phone-number-life").value
+      let email = document.getElementById("email-address-life").value
+      let valid = true
+
+      console.log("STARTING CHECK")
+
+      document.getElementById("first-name-life-err").hidden = true
+      document.getElementById("middle-name-life-err").hidden = true
+      document.getElementById("last-name-life-err").hidden = true
+      if (!isValidNames(fName, mName, lName)) {
+        document.getElementById("first-name-life-err").hidden = false
+        document.getElementById("middle-name-life-err").hidden = false
+        document.getElementById("last-name-life-err").hidden = false
+        console.log("out in name")
+        valid = false
+      }
+      document.getElementById("month-life-err").hidden = true
+      document.getElementById("day-life-err").hidden = true
+      document.getElementById("year-life-err").hidden = true
+      if (!isValidDOB(mDate, dDate, yDate)) {
+        document.getElementById("month-life-err").hidden = false
+        document.getElementById("day-life-err").hidden = false
+        document.getElementById("year-life-err").hidden = false
+        console.log("out in date")
+        valid = false
+      }
+      document.getElementById("drivers-license-life-err").hidden = true
+      if (!isValidODL(odlNumber)) {
+        document.getElementById("drivers-license-life-err").hidden = false
+        console.log("out in odl")
+        valid = false
+      }
+      document.getElementById("address-one-life-err").hidden = true
+      if (addressOne.trim() == "") {
+        document.getElementById("address-one-life-err").hidden = false
+        console.log("out in address")
+        valid = false
+      }
+      document.getElementById("city-life-err").hidden = true
+      if (city.trim() == "" || !isAlphaNumeric(city.trim())) {
+        document.getElementById("city-life-err").hidden = false
+        console.log("out in city")
+        valid = false
+      }
+      document.getElementById("state-life-err").hidden = true
+      if (state.trim() == "") {
+        document.getElementById("state-life-err").hidden = false
+        console.log("out in state")
+        valid = false
+      }
+      document.getElementById("zip-life-err").hidden = true
+      if (!zipTest.test(zip)) {
+        document.getElementById("zip-life-err").hidden = false
+        console.log("out in zip")
+        valid = false
+      }
+      document.getElementById("email-address-life-err").hidden = true
+      if (!emailTest.test(email)) {
+        document.getElementById("email-address-life-err").hidden = false
+        console.log("out in email")
+        valid = false
+      }
+      document.getElementById("phone-number-life-err").hidden = true
+      if (!phoneTest.test(phone)) {
+        document.getElementById("phone-number-life-err").hidden = false
+        console.log("out in phone")
+        valid = false
+      }
+      if (!valid) return
+
+    }
+
+    function isValidDOB(month, day, year) {
+      let numMonth = parseInt(month)
+      let numDay = parseInt(day)
+      let numYear = parseInt(year)
+      if (isNaN(numMonth) || isNaN(numDay) || isNaN(numYear)) return false
+      if (numMonth > 12 || numMonth < 0) return false
+      if (numDay > 31 || numDay < 1) return false
+      if (numYear > 2010 || numYear < 1922) return false
+      return true
+    }
+
+    function isAlphaNumeric(str) {
+      var code, i, len;
+
+      for (i = 0, len = str.length; i < len; i++) {
+        code = str.charCodeAt(i);
+        if (!(code > 47 && code < 58) && // numeric (0-9)
+          !(code > 64 && code < 91) && // upper alpha (A-Z)
+          !(code > 96 && code < 123)) { // lower alpha (a-z)
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function isValidNames(first, middle, last) {
+      if (isAlphaNumeric(first.trim()) && first.trim() != "" && isAlphaNumeric(last.trim()) && last.trim() != "") {
+        if (middle.trim() == "" || isAlphaNumeric(middle.trim())) return true
+      }
+      return false
+    }
+
+    function isValidODL(odlNumber) {
+      if (isAlphaNumeric(odlNumber)) {
+        if (odlNumber.length == 7) return true
+      }
+      return false
+    }
+    function isValidVIN(viNumber) {
+      if (isAlphaNumeric(viNumber)) {
+        if (viNumber.length == 17) return true
+      }
+      return false
+    }
 
   </script>
+
 </head>
 
 <body>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-auto-tab" data-bs-toggle="pill" data-bs-target="#pills-auto"
+        type="button" role="tab" aria-controls="pills-auto" aria-selected="true">Auto</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"
+        role="tab" aria-controls="pills-home" aria-selected="false">Home</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-commercial-tab" data-bs-toggle="pill" data-bs-target="#pills-commercial"
+        type="button" role="tab" aria-controls="pills-commercial" aria-selected="false">Commercial</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-life-tab" data-bs-toggle="pill" data-bs-target="#pills-life" type="button"
+        role="tab" aria-controls="pills-life" aria-selected="false">Life</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-auto" role="tabpanel" aria-labelledby="pills-auto-tab"
+      tabindex="0">
 
+      <!-- TAB CONTENT -->
 
-  <!-- Tab links -->
-  <div id="tab">
-    <button class="tablinks" id="autobtn" onclick="openTab(event, 'auto')">Auto</button>
-    <button class="tablinks" onclick="openTab(event, 'home')">Home</button>
-    <button class="tablinks" onclick="openTab(event, 'commercial')">Commercial</button>
-    <button class="tablinks" onclick="openTab(event, 'life')">Life</button>
-  </div>
-
-  <!-- Tab content -->
-  <div id="tabs">
-    <div id="auto" class="tabcontent">
-      <form id="fs-frm" name="registration-form" accept-charset="utf-8" action="https://formspree.io/f/mkneqgvb"
-        method="post">
-        <fieldset id="fs-frm-inputs">
-          <fieldset class="user-name">
-            <legend>Full Name</legend>
-            <div>
-              <input type="text" name="first" id="first-name" placeholder="First Name" required="">
-              <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
-              <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
-            </div>
+      <!--Auto-->
+      <div id="auto" class="tabcontent">
+        <form id="fs-frm" name="auto-registration-form" accept-charset="utf-8" onSubmit="return false">
+          <fieldset id="fs-frm-inputs">
+            <fieldset class="user-name">
+              <legend>Full Name</legend>
+              <div>
+                <input type="text" name="first" id="first-name-auto" placeholder="First Name">
+                <input type="text" name="middle" id="middle-name-auto" placeholder="Middle Name">
+                <input type="text" name="last" id="last-name-auto" placeholder="Last Name">
+              </div>
+              <div>
+                <err id="first-name-auto-err" hidden>Required Field, Alphanumeric only</err>
+                <err id="middle-name-auto-err" hidden>Alphanumeric only</err>
+                <err id="last-name-auto-err" hidden>Required Field, Alphanumeric only</err>
+              </div>
+            </fieldset>
+            <fieldset class="dateofbirth">
+              <legend>Date of Birth</legend>
+              <div>
+                <input type="number" name="month" id="month-auto" placeholder="MM">
+                <input type="number" name="day" id="day-auto" placeholder="DD">
+                <input type="number" name="year" id="year-auto" placeholder="YYYY">
+              </div>
+              <div>
+                <err id="month-auto-err" hidden>Required, 1-12</err>
+                <err id="day-auto-err" hidden>Required, 1-31</err>
+                <err id="year-auto-err" hidden>Required, 1922-2010</err>
+              </div>
+            </fieldset>
+            <label for="drivers-license number">Oregon Driver License Number</label>
+            <input type="text" name="drivers-license number" id="drivers-license-auto" placeholder="ID#">
+            <err id="drivers-license-auto-err" hidden>Required,7 characters</err>
+            <label for="vehicle identification number">Vehical Identification Number</label>
+            <input type="text" name="vehicle identification number" id="vehicle-identification-number-auto"
+              placeholder="ID#">
+            <err id="vehicle-identification-number-auto-err" hidden>Required,17 characters</err>
+            <label for="address-one-auto">Address Line 1</label>
+            <input type="text" name="address-one-auto" id="address-one-auto" placeholder="Address">
+            <err id="address-one-auto-err" hidden>Required</err>
+            <!-- Line 2 should be not required -->
+            <label for="address-two-auto">Address Line 2</label>
+            <input type="text" name="address-two-auto" id="address-two-auto" placeholder="Address">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city-auto" placeholder="City">
+            <err id="city-auto-err" hidden>Required</err>
+            <label for="state">State</label>
+            <input type="text" name="state" id="state-auto" placeholder="State" value="OR">
+            <err id="state-auto-err" hidden>Required</err>
+            <label for="zip">Zip</label>
+            <input type="number" name="zip" id="zip-auto" placeholder="#####">
+            <err id="zip-auto-err" hidden>Required, 5 digits</err>
+            <label for="email-address">Email Address</label>
+            <input type="email" name="_replyto" id="email-address-auto" placeholder="email@domain.tld">
+            <err id="email-address-auto-err" hidden>Required</err>
+            <label for="phone-number">Phone Number</label>
+            <input type="number" name="phone-number" id="phone-number-auto" placeholder="###-###-####">
+            <err id="phone-number-auto-err" hidden>Required, no special characters</err>
+            <input type="hidden" name="_subject" id="email-subject-auto" value="Registration Form Submission">
           </fieldset>
-          <fieldset class="dateofbirth">
-            <legend>Date of Birth</legend>
-            <div>
-              <select id="month" name="month" required="">
-                <option value="" selected="" disabled="">Month</option>
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-              </select>
-              <select id="day" name="day">
-                <option value="" selected="" disabled="">Day</option>
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-              </select>
-              <select id="year" name="year" required="">
-                <option value="" selected="" disabled="">Year</option>
-                <option value="1940">1940</option>
-                <option value="1941">1941</option>
-                <option value="1942">1942</option>
-                <option value="1943">1943</option>
-                <option value="1944">1944</option>
-                <option value="1945">1945</option>
-                <option value="1946">1946</option>
-                <option value="1947">1947</option>
-                <option value="1948">1948</option>
-                <option value="1949">1949</option>
-                <option value="1950">1950</option>
-                <option value="1951">1951</option>
-                <option value="1952">1952</option>
-                <option value="1953">1953</option>
-                <option value="1954">1954</option>
-                <option value="1955">1955</option>
-                <option value="1956">1956</option>
-                <option value="1957">1957</option>
-                <option value="1958">1958</option>
-                <option value="1959">1959</option>
-                <option value="1960">1960</option>
-                <option value="1961">1961</option>
-                <option value="1962">1962</option>
-                <option value="1963">1963</option>
-                <option value="1964">1964</option>
-                <option value="1965">1965</option>
-                <option value="1966">1966</option>
-                <option value="1967">1967</option>
-                <option value="1968">1968</option>
-                <option value="1969">1969</option>
-                <option value="1970">1970</option>
-                <option value="1971">1971</option>
-                <option value="1972">1972</option>
-                <option value="1973">1973</option>
-                <option value="1974">1974</option>
-                <option value="1975">1975</option>
-                <option value="1976">1976</option>
-                <option value="1977">1977</option>
-                <option value="1978">1978</option>
-                <option value="1979">1979</option>
-                <option value="1980">1980</option>
-                <option value="1981">1981</option>
-                <option value="1982">1982</option>
-                <option value="1983">1983</option>
-                <option value="1984">1984</option>
-                <option value="1985">1985</option>
-                <option value="1986">1986</option>
-                <option value="1987">1987</option>
-                <option value="1988">1988</option>
-                <option value="1989">1989</option>
-                <option value="1990">1990</option>
-                <option value="1991">1991</option>
-                <option value="1992">1992</option>
-                <option value="1993">1993</option>
-                <option value="1994">1994</option>
-                <option value="1995">1995</option>
-                <option value="1996">1996</option>
-                <option value="1997">1997</option>
-                <option value="1998">1998</option>
-                <option value="1999">1999</option>
-                <option value="2000">2000</option>
-                <option value="2001">2001</option>
-                <option value="2002">2002</option>
-                <option value="2003">2003</option>
-                <option value="2004">2004</option>
-                <option value="2005">2005</option>
-                <option value="2006">2006</option>
-                <option value="2007">2007</option>
-                <option value="2008">2008</option>
-                <option value="2009">2009</option>
-                <option value="2010">2010</option>
-                <option value="2011">2011</option>
-                <option value="2012">2012</option>
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-              </select>
-            </div>
-          </fieldset>
-          <label for="drivers-license number">Oregon Driver License Number</label>
-          <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#" required="">
-          <label for="vehicle identification number">Vehical Identification Number</label>
-          <input type="text" name="vehicle identification number" id="vehicle identification number" placeholder="ID#"
-            required="">
-          <label for="street-address">Street Address</label>
-          <input type="text" name="street" id="street-address" placeholder="Street" required="">
-          <label for="email-address">Email Address</label>
-          <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-          <label for="phone-number">Phone Number</label>
-          <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####" required="">
-
-
-          <input type="hidden" name="_subject" id="email-subject" value="Registration Form Submission">
-        </fieldset>
-        <input type="submit" value="Register">
-      </form>
+          <input type="submit" value="Register" onclick="submitAuto()">
+        </form>
+      </div>
     </div>
 
-    <div id="home" class="tabcontent">
-      <form id="fs-frm" name="registration-form" accept-charset="utf-8" action="https://formspree.io/f/mkneqgvb"
-        method="post">
-        <fieldset id="fs-frm-inputs">
-          <fieldset class="user-name">
-            <legend>Full Name</legend>
-            <div>
-              <input type="text" name="first" id="first-name" placeholder="First Name" required="">
-              <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
-              <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
-            </div>
+    <!--HOME-->
+    <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+      <div id="home" class="tabcontent">
+        <form id="fs-frm" name="home-registration-form" accept-charset="utf-8" onSubmit="return false">
+          <fieldset id="fs-frm-inputs">
+            <fieldset class="user-name">
+              <legend>Full Name</legend>
+              <div>
+                <input type="text" name="first" id="first-name-home" placeholder="First Name">
+                <input type="text" name="middle" id="middle-name-home" placeholder="Middle Name">
+                <input type="text" name="last" id="last-name-home" placeholder="Last Name">
+              </div>
+              <div>
+                <err id="first-name-home-err" hidden>Required Field, Alphanumeric only</err>
+                <err id="middle-name-home-err" hidden>Alphanumeric only</err>
+                <err id="last-name-home-err" hidden>Required Field, Alphanumeric only</err>
+              </div>
+            </fieldset>
+            <fieldset class="dateofbirth">
+              <legend>Date of Birth</legend>
+              <div>
+                <input type="number" name="month" id="month-home" placeholder="MM">
+                <input type="number" name="day" id="day-home" placeholder="DD">
+                <input type="number" name="year" id="year-home" placeholder="YYYY">
+              </div>
+              <div>
+                <err id="month-home-err" hidden>Required, 1-12</err>
+                <err id="day-home-err" hidden>Required, 1-31</err>
+                <err id="year-home-err" hidden>Required, 1922-2010</err>
+              </div>
+            </fieldset>
+            <label for="drivers-license number">Oregon Driver License Number</label>
+            <input type="text" name="drivers-license number" id="drivers-license-home" placeholder="ID#">
+            <err id="drivers-license-home-err" hidden>Required,7 characters</err>
+            <label for="address-one-home">Address Line 1</label>
+            <input type="text" name="address-one-home" id="address-one-home" placeholder="Address">
+            <err id="address-one-home-err" hidden>Required</err>
+            <label for="address-two-home">Address Line 2</label>
+            <input type="text" name="address-two-home" id="address-two-home" placeholder="Address">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city-home" placeholder="City">
+            <err id="city-home-err" hidden>Required</err>
+            <label for="state">State</label>
+            <input type="text" name="state" id="state-home" placeholder="State" value="OR">
+            <err id="state-home-err" hidden>Required</err>
+            <label for="zip">Zip</label>
+            <input type="number" name="zip" id="zip-home" placeholder="#####">
+            <err id="zip-home-err" hidden>Required, 5 digits</err>
+            <input type="email" name="_replyto" id="email-address-home" placeholder="email@domain.tld">
+            <err id="email-address-home-err" hidden>Required</err>
+            <label for="phone-number">Phone Number</label>
+            <input type="number" name="phone-number" id="phone-number-home" placeholder="###-###-####">
+            <err id="phone-number-home-err" hidden>Required, no special characters</err>
+            <input type="hidden" name="_subject" id="email-subject-home" value="Registration Form Submission">
           </fieldset>
-          <fieldset class="dateofbirth">
-            <legend>Date of Birth</legend>
-            <div>
-              <select id="month" name="month" required="">
-                <option value="" selected="" disabled="">Month</option>
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-              </select>
-              <select id="day" name="day">
-                <option value="" selected="" disabled="">Day</option>
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-              </select>
-              <select id="year" name="year" required="">
-                <option value="" selected="" disabled="">Year</option>
-                <option value="1940">1940</option>
-                <option value="1941">1941</option>
-                <option value="1942">1942</option>
-                <option value="1943">1943</option>
-                <option value="1944">1944</option>
-                <option value="1945">1945</option>
-                <option value="1946">1946</option>
-                <option value="1947">1947</option>
-                <option value="1948">1948</option>
-                <option value="1949">1949</option>
-                <option value="1950">1950</option>
-                <option value="1951">1951</option>
-                <option value="1952">1952</option>
-                <option value="1953">1953</option>
-                <option value="1954">1954</option>
-                <option value="1955">1955</option>
-                <option value="1956">1956</option>
-                <option value="1957">1957</option>
-                <option value="1958">1958</option>
-                <option value="1959">1959</option>
-                <option value="1960">1960</option>
-                <option value="1961">1961</option>
-                <option value="1962">1962</option>
-                <option value="1963">1963</option>
-                <option value="1964">1964</option>
-                <option value="1965">1965</option>
-                <option value="1966">1966</option>
-                <option value="1967">1967</option>
-                <option value="1968">1968</option>
-                <option value="1969">1969</option>
-                <option value="1970">1970</option>
-                <option value="1971">1971</option>
-                <option value="1972">1972</option>
-                <option value="1973">1973</option>
-                <option value="1974">1974</option>
-                <option value="1975">1975</option>
-                <option value="1976">1976</option>
-                <option value="1977">1977</option>
-                <option value="1978">1978</option>
-                <option value="1979">1979</option>
-                <option value="1980">1980</option>
-                <option value="1981">1981</option>
-                <option value="1982">1982</option>
-                <option value="1983">1983</option>
-                <option value="1984">1984</option>
-                <option value="1985">1985</option>
-                <option value="1986">1986</option>
-                <option value="1987">1987</option>
-                <option value="1988">1988</option>
-                <option value="1989">1989</option>
-                <option value="1990">1990</option>
-                <option value="1991">1991</option>
-                <option value="1992">1992</option>
-                <option value="1993">1993</option>
-                <option value="1994">1994</option>
-                <option value="1995">1995</option>
-                <option value="1996">1996</option>
-                <option value="1997">1997</option>
-                <option value="1998">1998</option>
-                <option value="1999">1999</option>
-                <option value="2000">2000</option>
-                <option value="2001">2001</option>
-                <option value="2002">2002</option>
-                <option value="2003">2003</option>
-                <option value="2004">2004</option>
-                <option value="2005">2005</option>
-                <option value="2006">2006</option>
-                <option value="2007">2007</option>
-                <option value="2008">2008</option>
-                <option value="2009">2009</option>
-                <option value="2010">2010</option>
-                <option value="2011">2011</option>
-                <option value="2012">2012</option>
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-              </select>
-            </div>
-          </fieldset>
-          <label for="drivers-license number">Oregon Driver License Number</label>
-          <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#" required="">
-          <label for="street-address">Street Address</label>
-          <input type="text" name="street" id="street-address" placeholder="Street" required="">
-          <label for="email-address">Email Address</label>
-          <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-          <label for="phone-number">Phone Number</label>
-          <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####" required="">
-          <input type="hidden" name="_subject" id="email-subject" value="Registration Form Submission">
-        </fieldset>
-        <input type="submit" value="Register">
-      </form>
+          <input type="submit" value="Register" onclick="submitHome()">
+        </form>
+      </div>
     </div>
 
-    <div id="commercial" class="tabcontent">
-      <form id="fs-frm" name="registration-form" accept-charset="utf-8" action="https://formspree.io/f/mkneqgvb"
-        method="post">
-        <fieldset id="fs-frm-inputs">
-          <label for="business-name">Business Name</label>
-          <input type="text" name="name" id="full-name" placeholder="Business Name" required="">
-          <fieldset class="user-name">
-            <legend>Full Name</legend>
-            <div>
-              <input type="text" name="first" id="first-name" placeholder="First Name" required="">
-              <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
-              <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
-            </div>
+    <!--commercial-->
+    <div class="tab-pane fade" id="pills-commercial" role="tabpanel" aria-labelledby="pills-commercial-tab"
+      tabindex="0">
+      <div id="commercial" class="tabcontent">
+        <form id="fs-frm" name="commercial-registration-form" accept-charset="utf-8" onSubmit="return false">
+          <fieldset id="fs-frm-inputs">
+            <label for="business-name">Business Name</label>
+            <input type="text" name="business-name" id="business-name-commercial" placeholder="Business Name">
+            <err id="business-name-commercial-err" hidden>Required Field</err>
+            <fieldset class="user-name">
+              <legend>Full Name</legend>
+              <div>
+                <input type="text" name="first" id="first-name-commercial" placeholder="First Name">
+                <input type="text" name="middle" id="middle-name-commercial" placeholder="Middle Name">
+                <input type="text" name="last" id="last-name-commercial" placeholder="Last Name">
+              </div>
+              <div>
+                <err id="first-name-commercial-err" hidden>Required Field, Alphanumeric only</err>
+                <err id="middle-name-commercial-err" hidden>Alphanumeric only</err>
+                <err id="last-name-commercial-err" hidden>Required Field, Alphanumeric only</err>
+              </div>
+            </fieldset>
+            <fieldset class="dateofbirth">
+              <legend>Date of Birth</legend>
+              <div>
+                <input type="number" name="month" id="month-commercial" placeholder="MM">
+                <input type="number" name="day" id="day-commercial" placeholder="DD">
+                <input type="number" name="year" id="year-commercial" placeholder="YYYY">
+              </div>
+              <div>
+                <err id="month-commercial-err" hidden>Required, 1-12</err>
+                <err id="day-commercial-err" hidden>Required, 1-31</err>
+                <err id="year-commercial-err" hidden>Required, 1922-2010</err>
+              </div>
+            </fieldset>
+            <label for="drivers-license number">Oregon Driver License Number</label>
+            <input type="text" name="drivers-license number" id="drivers-license-commercial" placeholder="ID#">
+            <err id="drivers-license-commercial-err" hidden>Required,7 characters</err>
+            <label for="address-one-commercial">Address Line 1</label>
+            <input type="text" name="address-one-commercial" id="address-one-commercial" placeholder="Address">
+            <err id="address-one-commercial-err" hidden>Required</err>
+            <label for="address-two-commercial">Address Line 2</label>
+            <input type="text" name="address-two-commercial" id="address-two-commercial" placeholder="Address">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city-commercial" placeholder="City">
+            <err id="city-commercial-err" hidden>Required</err>
+            <label for="state">State</label>
+            <input type="text" name="state" id="state-commercial" placeholder="State" value="OR">
+            <err id="state-commercial-err" hidden>Required</err>
+            <label for="zip">Zip</label>
+            <input type="number" name="zip" id="zip-commercial" placeholder="#####">
+            <err id="zip-commercial-err" hidden>Required, 5 digits</err>
+            <label for="annual-reciepts">Annual Reciepts</label>
+            <input type="text" name="annual-reciepts" id="annual-reciepts-commercial" placeholder="annual-reciepts">
+            <label for="federal-id-number">Federal ID Number</label>
+            <input type="number" name="federal-id-number" id="federal-id-number-commercial" placeholder="#########">
+            <err id="federal-id-number-commercial-err" hidden>Required, 9 digits</err>
+            <label for="employee-count">Number of Employees</label>
+            <input type="number" name="employee-count" id="employee-count-commercial" placeholder="employee-count">
+            <err id="employee-count-commercial-err" hidden>Required</err>
+            <input type="email" name="_replyto" id="email-address-commercial" placeholder="email@domain.tld">
+            <err id="email-address-commercial-err" hidden>Required</err>
+            <label for="phone-number">Phone Number</label>
+            <input type="number" name="phone-number" id="phone-number-commercial" placeholder="###-###-####">
+            <err id="phone-number-commercial-err" hidden>Required, no special characters</err>
+
           </fieldset>
-          <fieldset class="dateofbirth">
-            <legend>Date of Birth</legend>
-            <div>
-              <select id="month" name="month" required="">
-                <option value="" selected="" disabled="">Month</option>
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-              </select>
-              <select id="day" name="day">
-                <option value="" selected="" disabled="">Day</option>
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-              </select>
-              <select id="year" name="year" required="">
-                <option value="" selected="" disabled="">Year</option>
-                <option value="1940">1940</option>
-                <option value="1941">1941</option>
-                <option value="1942">1942</option>
-                <option value="1943">1943</option>
-                <option value="1944">1944</option>
-                <option value="1945">1945</option>
-                <option value="1946">1946</option>
-                <option value="1947">1947</option>
-                <option value="1948">1948</option>
-                <option value="1949">1949</option>
-                <option value="1950">1950</option>
-                <option value="1951">1951</option>
-                <option value="1952">1952</option>
-                <option value="1953">1953</option>
-                <option value="1954">1954</option>
-                <option value="1955">1955</option>
-                <option value="1956">1956</option>
-                <option value="1957">1957</option>
-                <option value="1958">1958</option>
-                <option value="1959">1959</option>
-                <option value="1960">1960</option>
-                <option value="1961">1961</option>
-                <option value="1962">1962</option>
-                <option value="1963">1963</option>
-                <option value="1964">1964</option>
-                <option value="1965">1965</option>
-                <option value="1966">1966</option>
-                <option value="1967">1967</option>
-                <option value="1968">1968</option>
-                <option value="1969">1969</option>
-                <option value="1970">1970</option>
-                <option value="1971">1971</option>
-                <option value="1972">1972</option>
-                <option value="1973">1973</option>
-                <option value="1974">1974</option>
-                <option value="1975">1975</option>
-                <option value="1976">1976</option>
-                <option value="1977">1977</option>
-                <option value="1978">1978</option>
-                <option value="1979">1979</option>
-                <option value="1980">1980</option>
-                <option value="1981">1981</option>
-                <option value="1982">1982</option>
-                <option value="1983">1983</option>
-                <option value="1984">1984</option>
-                <option value="1985">1985</option>
-                <option value="1986">1986</option>
-                <option value="1987">1987</option>
-                <option value="1988">1988</option>
-                <option value="1989">1989</option>
-                <option value="1990">1990</option>
-                <option value="1991">1991</option>
-                <option value="1992">1992</option>
-                <option value="1993">1993</option>
-                <option value="1994">1994</option>
-                <option value="1995">1995</option>
-                <option value="1996">1996</option>
-                <option value="1997">1997</option>
-                <option value="1998">1998</option>
-                <option value="1999">1999</option>
-                <option value="2000">2000</option>
-                <option value="2001">2001</option>
-                <option value="2002">2002</option>
-                <option value="2003">2003</option>
-                <option value="2004">2004</option>
-                <option value="2005">2005</option>
-                <option value="2006">2006</option>
-                <option value="2007">2007</option>
-                <option value="2008">2008</option>
-                <option value="2009">2009</option>
-                <option value="2010">2010</option>
-                <option value="2011">2011</option>
-                <option value="2012">2012</option>
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-              </select>
-            </div>
-          </fieldset>
-          <label for="drivers-license number">Oregon Driver License Number</label>
-          <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#" required="">
-          <label for="street-address">Street Address</label>
-          <input type="text" name="street" id="street-address" placeholder="Street" required="">
-          <label for="annual-reciepts">Annual Reciepts</label>
-          <input type="text" name="annual-reciepts" id="annual-reciepts" placeholder="annual-reciepts" required="">
-          <label for="federal-id-number">Federal ID Number</label>
-          <input type="number" name="federal-id-number" id="federal-id-number" placeholder="###-###-###" required="">
-          <label for="employee-count">Number of Employees</label>
-          <input type="number" name="employee-count" id="employee-count" placeholder="employee-count" required="">
-          <label for="phone-number">Phone Number</label>
-          <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####" required="">
-          <input type="hidden" name="_subject" id="email-subject" value="Registration Form Submission">
-        </fieldset>
-        <input type="submit" value="Register">
-      </form>
+          <input type="submit" value="Register" onclick="submitCommercial()">
+        </form>
+      </div>
     </div>
 
-    <div id="life" class="tabcontent">
-      <form id="fs-frm" name="registration-form" accept-charset="utf-8" action="https://formspree.io/f/mkneqgvb"
-        method="post">
-        <fieldset id="fs-frm-inputs">
-          <fieldset class="user-name">
-            <legend>Full Name</legend>
-            <div>
-              <input type="text" name="first" id="first-name" placeholder="First Name" required="">
-              <input type="text" name="middle" id="middle-name" placeholder="Middle Name">
-              <input type="text" name="last" id="last-name" placeholder="Last Name" required="">
-            </div>
+    <!--life-->
+    <div class="tab-pane fade" id="pills-life" role="tabpanel" aria-labelledby="pills-life-tab" tabindex="0">
+      <div id="life" class="tabcontent">
+        <form id="fs-frm" name="life-registration-form" accept-charset="utf-8" onSubmit="return false">
+          <fieldset id="fs-frm-inputs">
+            <fieldset class="user-name">
+              <legend>Full Name</legend>
+              <div>
+                <input type="text" name="first" id="first-name-life" placeholder="First Name">
+                <input type="text" name="middle" id="middle-name-life" placeholder="Middle Name">
+                <input type="text" name="last" id="last-name-life" placeholder="Last Name">
+              </div>
+              <div>
+                <err id="first-name-life-err" hidden>Required Field, Alphanumeric only</err>
+                <err id="middle-name-life-err" hidden>Alphanumeric only</err>
+                <err id="last-name-life-err" hidden>Required Field, Alphanumeric only</err>
+              </div>
+            </fieldset>
+            <fieldset class="dateofbirth">
+              <legend>Date of Birth</legend>
+              <div>
+                <input type="number" name="month" id="month-life" placeholder="MM">
+                <input type="number" name="day" id="day-life" placeholder="DD">
+                <input type="number" name="year" id="year-life" placeholder="YYYY">
+              </div>
+              <div>
+                <err id="month-life-err" hidden>Required, 1-12</err>
+                <err id="day-life-err" hidden>Required, 1-31</err>
+                <err id="year-life-err" hidden>Required, 1922-2010</err>
+              </div>
+            </fieldset>
+            <label for="drivers-license number">Oregon Driver License Number</label>
+            <input type="text" name="drivers-license number" id="drivers-license-life" placeholder="ID#">
+            <err id="drivers-license-life-err" hidden>Required,7 characters</err>
+            <label for="address-one-life">Address Line 1</label>
+            <input type="text" name="address-one-life" id="address-one-life" placeholder="Address">
+            <err id="address-one-life-err" hidden>Required</err>
+            <label for="address-two-life">Address Line 2</label>
+            <input type="text" name="address-two-life" id="address-two-life" placeholder="Address">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city-life" placeholder="City">
+            <err id="city-life-err" hidden>Required</err>
+            <label for="state">State</label>
+            <input type="text" name="state" id="state-life" placeholder="State" value="OR">
+            <err id="state-life-err" hidden>Required</err>
+            <label for="zip">Zip</label>
+            <input type="number" name="zip" id="zip-life" placeholder="#####">
+            <err id="zip-life-err" hidden>Required, 5 digits</err>
+            <input type="email" name="_replyto" id="email-address-life" placeholder="email@domain.tld">
+            <err id="email-address-life-err" hidden>Required</err>
+            <label for="phone-number">Phone Number</label>
+            <input type="number" name="phone-number" id="phone-number-life" placeholder="###-###-####">
+            <err id="phone-number-life-err" hidden>Required, no special characters</err>
+            <label for="history-of-illness">History of Illness</label>
+            <textarea rows="2" name="note" id="note-life"
+              placeholder="Include any medical information on any chronic illnesses"></textarea>
+            <input type="hidden" name="_subject" id="email-subject-life" value="Registration Form Submission">
           </fieldset>
-          <fieldset class="dateofbirth">
-            <legend>Date of Birth</legend>
-            <div>
-              <select id="month" name="month" required="">
-                <option value="" selected="" disabled="">Month</option>
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-              </select>
-              <select id="day" name="day">
-                <option value="" selected="" disabled="">Day</option>
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-              </select>
-              <select id="year" name="year" required="">
-                <option value="" selected="" disabled="">Year</option>
-                <option value="1940">1940</option>
-                <option value="1941">1941</option>
-                <option value="1942">1942</option>
-                <option value="1943">1943</option>
-                <option value="1944">1944</option>
-                <option value="1945">1945</option>
-                <option value="1946">1946</option>
-                <option value="1947">1947</option>
-                <option value="1948">1948</option>
-                <option value="1949">1949</option>
-                <option value="1950">1950</option>
-                <option value="1951">1951</option>
-                <option value="1952">1952</option>
-                <option value="1953">1953</option>
-                <option value="1954">1954</option>
-                <option value="1955">1955</option>
-                <option value="1956">1956</option>
-                <option value="1957">1957</option>
-                <option value="1958">1958</option>
-                <option value="1959">1959</option>
-                <option value="1960">1960</option>
-                <option value="1961">1961</option>
-                <option value="1962">1962</option>
-                <option value="1963">1963</option>
-                <option value="1964">1964</option>
-                <option value="1965">1965</option>
-                <option value="1966">1966</option>
-                <option value="1967">1967</option>
-                <option value="1968">1968</option>
-                <option value="1969">1969</option>
-                <option value="1970">1970</option>
-                <option value="1971">1971</option>
-                <option value="1972">1972</option>
-                <option value="1973">1973</option>
-                <option value="1974">1974</option>
-                <option value="1975">1975</option>
-                <option value="1976">1976</option>
-                <option value="1977">1977</option>
-                <option value="1978">1978</option>
-                <option value="1979">1979</option>
-                <option value="1980">1980</option>
-                <option value="1981">1981</option>
-                <option value="1982">1982</option>
-                <option value="1983">1983</option>
-                <option value="1984">1984</option>
-                <option value="1985">1985</option>
-                <option value="1986">1986</option>
-                <option value="1987">1987</option>
-                <option value="1988">1988</option>
-                <option value="1989">1989</option>
-                <option value="1990">1990</option>
-                <option value="1991">1991</option>
-                <option value="1992">1992</option>
-                <option value="1993">1993</option>
-                <option value="1994">1994</option>
-                <option value="1995">1995</option>
-                <option value="1996">1996</option>
-                <option value="1997">1997</option>
-                <option value="1998">1998</option>
-                <option value="1999">1999</option>
-                <option value="2000">2000</option>
-                <option value="2001">2001</option>
-                <option value="2002">2002</option>
-                <option value="2003">2003</option>
-                <option value="2004">2004</option>
-                <option value="2005">2005</option>
-                <option value="2006">2006</option>
-                <option value="2007">2007</option>
-                <option value="2008">2008</option>
-                <option value="2009">2009</option>
-                <option value="2010">2010</option>
-                <option value="2011">2011</option>
-                <option value="2012">2012</option>
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-              </select>
-            </div>
-          </fieldset>
-          <label for="drivers-license number">Oregon Driver License Number</label>
-          <input type="text" name="drivers-license number" id="drivers-license" placeholder="ID#" required="">
-          <label for="street-address">Street Address</label>
-          <input type="text" name="street" id="street-address" placeholder="Street" required="">
-          <label for="email-address">Email Address</label>
-          <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-          <label for="phone-number">Phone Number</label>
-          <input type="number" name="phone-number" id="phone-number" placeholder="###-###-####" required="">
-          <label for="history-of-illness">History of Illness</label>
-          <textarea rows="2" name="note" id="note"
-            placeholder="Include any medical information on any chronic illnesses"></textarea>
-          <input type="hidden" name="_subject" id="email-subject" value="Registration Form Submission">
-        </fieldset>
-        <input type="submit" value="Register">
-      </form>
+          <input type="submit" value="Register" onclick="submitLife()">
+        </form>
+      </div>
     </div>
   </div>
 
 
 
+
+
+
+
+
+  <!-- Hidden forms for submission functions -->
+  <div id="auto-hidden">
+    <form id="auto-hidden-form" name="auto-registration-form" accept-charset="utf-8">
+      <!-- https://formspree.io/f/mkneqgvb -->
+      <fieldset id="fs-frm-inputs">
+        <fieldset class="user-name">
+          <legend>Full Name</legend>
+          <div>
+            <input type="text" name="first" id="first-name-auto-hidden" placeholder="First Name" required="">
+            <input type="text" name="middle" id="middle-name-auto-hidden" placeholder="Middle Name">
+            <input type="text" name="last" id="last-name-auto-hidden" placeholder="Last Name" required="">
+          </div>
+        </fieldset>
+        <fieldset class="dateofbirth">
+          <legend>Date of Birth</legend>
+          <div>
+            <input type="number" name="month" id="month-auto-hidden" placeholder="MM">
+            <input type="number" name="day" id="day-auto-hidden" placeholder="DD">
+            <input type="number" name="year" id="year-auto-hidden" placeholder="YYYY">
+          </div>
+        </fieldset>
+        <label for="drivers-license number">Oregon Driver License Number</label>
+        <input type="text" name="drivers-license number" id="drivers-license-auto-hidden" placeholder="ID#" required="">
+        <label for="vehicle identification number">Vehical Identification Number</label>
+        <input type="text" name="vehicle identification number" id="vehicle-identification-number-auto-hidden"
+          placeholder="ID#" required="">
+        <label for="address-one-auto">Address Line 1</label>
+        <input type="text" name="address-one-auto" id="address-one-auto-hidden" placeholder="Address">
+        <!-- Line 2 should be not required -->
+        <label for="address-two-auto">Address Line 2</label>
+        <input type="text" name="address-two-auto" id="address-two-auto-hidden" placeholder="Address">
+        <label for="city">City</label>
+        <input type="text" name="city" id="city-auto-hidden" placeholder="City">
+        <label for="state">State</label>
+        <input type="text" name="state" id="state-auto-hidden" placeholder="State" value="OR">
+        <label for="zip">Zip</label>
+        <input type="number" name="zip" id="zip-auto-hidden" placeholder="#####">
+        <label for="email-address">Email Address</label>
+        <input type="email" name="_replyto" id="email-address-auto-hidden" placeholder="email@domain.tld" required="">
+        <label for="phone-number">Phone Number</label>
+        <input type="number" name="phone-number" id="phone-number-auto-hidden" placeholder="###-###-####" required="">
+        <input type="hidden" name="_subject" id="email-subject-auto-hidden" value="Registration Form Submission">
+      </fieldset>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+  </div>
 
 </body>
 
