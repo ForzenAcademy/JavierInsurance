@@ -1,163 +1,179 @@
-/* Style the tab */
-#tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+.wrapper {
+  position: relative;
 }
 
-/* Style the buttons inside the tab */
-#tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-#tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-#tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-#fs-frm input,
-#fs-frm select,
-#fs-frm textarea,
-#fs-frm fieldset,
-#fs-frm optgroup,
-#fs-frm label,
-#fs-frm #card-element:disabled {
-  font-family: inherit;
-  font-size: 100%;
-  color: inherit;
-  border: none;
-  border-radius: 0;
-  display: block;
+.primary-nav {
   width: 100%;
-  padding: 0;
-  margin: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
-#fs-frm label,
-#fs-frm legend,
-#fs-frm ::placeholder {
-  font-size: .825rem;
-  margin-bottom: .5rem;
-  padding-top: .2rem;
+.navbar-brand {
+  text-align: bottom;
+  margin-top: 1.5rem;
+}
+
+.navbar-nav {
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
 }
 
-/* border, padding, margin, width */
-#fs-frm input,
-#fs-frm select,
-#fs-frm textarea,
-#fs-frm #card-element {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: .75em 1rem;
-  margin-bottom: 1.5rem;
-}
-
-#fs-frm input:focus,
-#fs-frm textarea:focus {
-  background-color: white;
-  outline-style: solid;
-  outline-width: thin;
-  outline-color: gray;
-  outline-offset: -1px;
-}
-
-#fs-frm [type="text"],
-#fs-frm [type="email"] {
-  width: 100%;
-}
-
-#fs-frm [type="button"],
-#fs-frm [type="submit"],
-#fs-frm [type="reset"] {
-  width: auto;
+#auto-tab,
+#home-tab,
+#commercial-tab,
+#life-tab {
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 27px;
+  margin-bottom: -1px;
+  padding-left: 52px;
+  padding-right: 52px;
+  color-scheme: dark;
+  position: relative;
+  text-align: left;
+  transition-delay: 0s;
+  transition-duration: 0.15s;
+  transition-property: color;
+  transition-timing-function: ease-out;
   cursor: pointer;
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
+  display: flex;
+  height: 64px;
+  background-color: rgb(24, 26, 27);
+  border-bottom-color: rgb(48, 52, 54);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-style: none;
+  border-left-color: rgb(48, 52, 54);
+  border-right-color: rgb(48, 52, 54);
+  border-top-color: rgb(48, 52, 54);
 }
 
-#fs-frm [type="button"]:focus,
-#fs-frm [type="submit"]:focus,
-#fs-frm [type="reset"]:focus {
-  outline: none;
+#pills-auto-tab,
+#pills-home-tab,
+#pills-commercial-tab,
+#pills-life-tab {
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 27px;
+  margin-bottom: -1px;
+  padding-left: 52px;
+  padding-right: 52px;
+  color-scheme: dark;
+  position: relative;
+  text-align: left;
+  transition-delay: 0s;
+  transition-duration: 0.15s;
+  transition-property: color;
+  transition-timing-function: ease-out;
+  cursor: pointer;
+  display: flex;
+  height: 64px;
+  background-color: rgb(24, 26, 27);
+  border-bottom-color: rgb(48, 52, 54);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-style: none;
+  border-left-color: rgb(48, 52, 54);
+  border-right-color: rgb(48, 52, 54);
+  border-top-color: rgb(48, 52, 54);
 }
 
-#fs-frm [type="submit"],
-#fs-frm [type="reset"] {
-  margin-bottom: 0;
+.nav-tabs {
+  border-bottom-color: rgb(209, 205, 199);
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+  box-sizing: border-box;
+  color: rgb(209, 205, 199);
+  color-scheme: dark;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
-#fs-frm [type="checkbox"] {
-  -webkit-appearance: checkbox;
-  -moz-appearance: checkbox;
-  appearance: checkbox;
-  display: inline-block;
-  width: auto;
-  margin: 0 .5em 0 0 !important;
+.card {
+  height: 90%;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  -webkit-box-shadow: 0 0 10px 10px #cccccc;
+  -moz-box-shadow: 0 0 10px 10px #cccccc;
+  box-shadow: 0 0 10px 10px #cccccc;
 }
 
-#fs-frm [type="radio"] {
-  -webkit-appearance: radio;
-  -moz-appearance: radio;
-  appearance: radio;
+.ownername,
+.languagetext,
+.phone-number {
+  text-align: center;
 }
 
-/* user-name */
-#fs-frm fieldset.user-name input[name="first"],
-#fs-frm fieldset.user-name input[name="middle"],
-#fs-frm fieldset.user-name input[name="last"] {
-  display: inline;
+.ownername {
+  font-size: x-large;
 }
 
-#fs-frm fieldset.user-name input[name="first"],
-#fs-frm fieldset.user-name input[name="middle"],
-#fs-frm fieldset.user-name input[name="last"] {
-  width: 30%;
+.languagetext {
+  font-size: large;
 }
 
-#fs-frm fieldset.user-name input[name="first"],
-#fs-frm fieldset.user-name input[name="middle"] {
-  margin-right: 3%;
+.phone-number {
+  color: lightgreen;
 }
 
-/* date of birth */
-#fs-frm fieldset.dateofbirth select[name="month"],
-#fs-frm fieldset.dateofbirth select[name="day"],
-#fs-frm fieldset.dateofbirth select[name="year"] {
-  display: inline;
+.sitename {
+  font-size: xx-large;
 }
 
-#fs-frm fieldset.dateofbirth select[name="month"],
-#fs-frm fieldset.dateofbirth select[name="day"],
-#fs-frm fieldset.dateofbirth select[name="year"] {
-  width: 30%;
+.descriptivetext,
+.categorytext {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 1%;
 }
 
-#fs-frm fieldset.dateofbirth select[name="month"],
-#fs-frm fieldset.dateofbirth select[name="day"] {
-  margin-right: 3%;
+.descriptivetext {
+  font-size: large;
+  text-align: center;
+}
+
+.descriptivetext::first-letter {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #f57c20;
+}
+
+.categorytext {
+  font-size: xx-large;
+  text-align: center;
+  color: #f57c20;
+}
+
+.formcard {
+  border: #fd9d0d;
+  background-color: #88c9ff;
+  text-align: center;
+  padding: 4%;
+  margin: 4%;
+  -webkit-box-shadow: 0 0 15px 15px #cccccc;
+  -moz-box-shadow: 0 0 15px 15px #cccccc;
+  box-shadow: 0 0 15px 15px #cccccc;
+  z-index: 1;
+}
+
+.card-img-top {
+  align-items: center;
+}
+
+.autobtn,
+.homebtn,
+.buisbtn,
+.lifebtn {
+  position: absolute;
+  text-align: center;
 }
