@@ -36,7 +36,6 @@
         document.getElementById("first-name-auto-err").hidden = false
         document.getElementById("middle-name-auto-err").hidden = false
         document.getElementById("last-name-auto-err").hidden = false
-        console.log("out in name")
         valid = false
       }
       document.getElementById("month-auto-err").hidden = true
@@ -46,55 +45,46 @@
         document.getElementById("month-auto-err").hidden = false
         document.getElementById("day-auto-err").hidden = false
         document.getElementById("year-auto-err").hidden = false
-        console.log("out in date")
         valid = false
       }
       document.getElementById("drivers-license-auto-err").hidden = true
       if (!isValidODL(odlNumber)) {
         document.getElementById("drivers-license-auto-err").hidden = false
-        console.log("out in odl")
         valid = false
       }
       document.getElementById("vehicle-identification-number-auto-err").hidden = true
       if (!isValidVIN(viNumber)) {
         document.getElementById("vehicle-identification-number-auto-err").hidden = false
-        console.log("out in vin")
         valid = false
       }
       document.getElementById("address-one-auto-err").hidden = true
       if (addressOne.trim() == "") {
         document.getElementById("address-one-auto-err").hidden = false
-        console.log("out in address")
         valid = false
       }
       document.getElementById("city-auto-err").hidden = true
       if (city.trim() == "" || !isAlphaNumeric(city.trim())) {
         document.getElementById("city-auto-err").hidden = false
-        console.log("out in city")
         valid = false
       }
       document.getElementById("state-auto-err").hidden = true
       if (state.trim() == "") {
         document.getElementById("state-auto-err").hidden = false
-        console.log("out in state")
         valid = false
       }
       document.getElementById("zip-auto-err").hidden = true
       if (!zipTest.test(zip)) {
         document.getElementById("zip-auto-err").hidden = false
-        console.log("out in zip")
         valid = false
       }
       document.getElementById("email-address-auto-err").hidden = true
       if (!emailTest.test(email)) {
         document.getElementById("email-address-auto-err").hidden = false
-        console.log("out in email")
         valid = false
       }
       document.getElementById("phone-number-auto-err").hidden = true
       if (!phoneTest.test(phone)) {
         document.getElementById("phone-number-auto-err").hidden = false
-        console.log("out in phone")
         valid = false
       }
       if (!valid) return
@@ -115,6 +105,8 @@
       document.getElementById("zip-auto-hidden").value = zip
       document.getElementById("phone-number-auto-hidden").value = phone
       document.getElementById("email-address-auto-hidden").value = email
+
+      document.getElementById("auto-hidden-form-submit").click()
 
     }
     function submitHome() {
@@ -141,7 +133,6 @@
         document.getElementById("first-name-home-err").hidden = false
         document.getElementById("middle-name-home-err").hidden = false
         document.getElementById("last-name-home-err").hidden = false
-        console.log("out in name")
         valid = false
       }
       document.getElementById("month-home-err").hidden = true
@@ -151,52 +142,61 @@
         document.getElementById("month-home-err").hidden = false
         document.getElementById("day-home-err").hidden = false
         document.getElementById("year-home-err").hidden = false
-        console.log("out in date")
         valid = false
       }
       document.getElementById("drivers-license-home-err").hidden = true
       if (!isValidODL(odlNumber)) {
         document.getElementById("drivers-license-home-err").hidden = false
-        console.log("out in odl")
         valid = false
       }
       document.getElementById("address-one-home-err").hidden = true
       if (addressOne.trim() == "") {
         document.getElementById("address-one-home-err").hidden = false
-        console.log("out in address")
         valid = false
       }
       document.getElementById("city-home-err").hidden = true
       if (city.trim() == "" || !isAlphaNumeric(city.trim())) {
         document.getElementById("city-home-err").hidden = false
-        console.log("out in city")
         valid = false
       }
       document.getElementById("state-home-err").hidden = true
       if (state.trim() == "") {
         document.getElementById("state-home-err").hidden = false
-        console.log("out in state")
         valid = false
       }
       document.getElementById("zip-home-err").hidden = true
       if (!zipTest.test(zip)) {
         document.getElementById("zip-home-err").hidden = false
-        console.log("out in zip")
         valid = false
       }
       document.getElementById("email-address-home-err").hidden = true
       if (!emailTest.test(email)) {
         document.getElementById("email-address-home-err").hidden = false
-        console.log("out in email")
         valid = false
       }
       document.getElementById("phone-number-home-err").hidden = true
       if (!phoneTest.test(phone)) {
         document.getElementById("phone-number-home-err").hidden = false
-        console.log("out in phone")
         valid = false
       }
       if (!valid) return
+
+      document.getElementById("first-name-home-hidden").value = fName
+      document.getElementById("middle-name-home-hidden").value = mName
+      document.getElementById("last-name-home-hidden").value = lName
+      document.getElementById("month-home-hidden").value = mDate
+      document.getElementById("day-home-hidden").value = dDate
+      document.getElementById("year-home-hidden").value = yDate
+      document.getElementById("drivers-license-home-hidden").value = odlNumber
+      document.getElementById("address-one-home-hidden").value = addressOne
+      document.getElementById("address-two-home-hidden").value = addressTwo
+      document.getElementById("city-home-hidden").value = city
+      document.getElementById("state-home-hidden").value = state
+      document.getElementById("zip-home-hidden").value = zip
+      document.getElementById("phone-number-home-hidden").value = phone
+      document.getElementById("email-address-home-hidden").value = email
+
+      document.getElementById("home-hidden-form-submit").click()
 
     }
     function submitCommercial() {
@@ -222,7 +222,6 @@
       document.getElementById("business-name-commercial-err").hidden = true
       if (bName == "") {
         document.getElementById("business-name-commercial-err").hidden = false
-        console.log("out in business name")
         valid = false
       }
       document.getElementById("first-name-commercial-err").hidden = true
@@ -232,7 +231,6 @@
         document.getElementById("first-name-commercial-err").hidden = false
         document.getElementById("middle-name-commercial-err").hidden = false
         document.getElementById("last-name-commercial-err").hidden = false
-        console.log("out in name")
         valid = false
       }
       document.getElementById("month-commercial-err").hidden = true
@@ -242,64 +240,75 @@
         document.getElementById("month-commercial-err").hidden = false
         document.getElementById("day-commercial-err").hidden = false
         document.getElementById("year-commercial-err").hidden = false
-        console.log("out in date")
         valid = false
       }
       document.getElementById("drivers-license-commercial-err").hidden = true
       if (!isValidODL(odlNumber)) {
         document.getElementById("drivers-license-commercial-err").hidden = false
-        console.log("out in odl")
         valid = false
       }
       document.getElementById("address-one-commercial-err").hidden = true
       if (addressOne.trim() == "") {
         document.getElementById("address-one-commercial-err").hidden = false
-        console.log("out in address")
         valid = false
       }
       document.getElementById("city-commercial-err").hidden = true
       if (city.trim() == "" || !isAlphaNumeric(city.trim())) {
         document.getElementById("city-commercial-err").hidden = false
-        console.log("out in city")
         valid = false
       }
       document.getElementById("state-commercial-err").hidden = true
       if (state.trim() == "") {
         document.getElementById("state-commercial-err").hidden = false
-        console.log("out in state")
         valid = false
       }
       document.getElementById("zip-commercial-err").hidden = true
       if (!zipTest.test(zip)) {
         document.getElementById("zip-commercial-err").hidden = false
-        console.log("out in zip")
         valid = false
       }
       document.getElementById("federal-id-number-commercial-err").hidden = true
       if (isNaN(parseInt(fedID.trim())) || fedID.trim().length != 9) {
         document.getElementById("federal-id-number-commercial-err").hidden = false
-        console.log("out in fed id")
         valid = false
       }
       document.getElementById("employee-count-commercial-err").hidden = true
       if (isNaN(parseInt(fedID.trim()))) {
         document.getElementById("employee-count-commercial-err").hidden = false
-        console.log("out in employee count")
         valid = false
       }
       document.getElementById("email-address-commercial-err").hidden = true
       if (!emailTest.test(email)) {
         document.getElementById("email-address-commercial-err").hidden = false
-        console.log("out in email")
         valid = false
       }
       document.getElementById("phone-number-commercial-err").hidden = true
       if (!phoneTest.test(phone)) {
         document.getElementById("phone-number-commercial-err").hidden = false
-        console.log("out in phone")
         valid = false
       }
       if (!valid) return
+
+      document.getElementById("business-name-commercial-hidden").value = bName
+      document.getElementById("first-name-commercial-hidden").value = fName
+      document.getElementById("middle-name-commercial-hidden").value = mName
+      document.getElementById("last-name-commercial-hidden").value = lName
+      document.getElementById("month-commercial-hidden").value = mDate
+      document.getElementById("day-commercial-hidden").value = dDate
+      document.getElementById("year-commercial-hidden").value = yDate
+      document.getElementById("drivers-license-commercial-hidden").value = odlNumber
+      document.getElementById("address-one-commercial-hidden").value = addressOne
+      document.getElementById("address-two-commercial-hidden").value = addressTwo
+      document.getElementById("city-commercial-hidden").value = city
+      document.getElementById("state-commercial-hidden").value = state
+      document.getElementById("zip-commercial-hidden").value = zip
+      document.getElementById("annual-reciepts-commercial-hidden").value = document.getElementById("annual-reciepts-commercial").value
+      document.getElementById("federal-id-number-commercial-hidden").value = fedID
+      document.getElementById("employee-count-commercial-hidden").value = employeeCount
+      document.getElementById("phone-number-commercial-hidden").value = phone
+      document.getElementById("email-address-commercial-hidden").value = email
+
+      document.getElementById("commercial-hidden-form-submit").click()
 
     }
     function submitLife() {
@@ -319,8 +328,6 @@
       let email = document.getElementById("email-address-life").value
       let valid = true
 
-      console.log("STARTING CHECK")
-
       document.getElementById("first-name-life-err").hidden = true
       document.getElementById("middle-name-life-err").hidden = true
       document.getElementById("last-name-life-err").hidden = true
@@ -328,7 +335,6 @@
         document.getElementById("first-name-life-err").hidden = false
         document.getElementById("middle-name-life-err").hidden = false
         document.getElementById("last-name-life-err").hidden = false
-        console.log("out in name")
         valid = false
       }
       document.getElementById("month-life-err").hidden = true
@@ -338,52 +344,62 @@
         document.getElementById("month-life-err").hidden = false
         document.getElementById("day-life-err").hidden = false
         document.getElementById("year-life-err").hidden = false
-        console.log("out in date")
         valid = false
       }
       document.getElementById("drivers-license-life-err").hidden = true
       if (!isValidODL(odlNumber)) {
         document.getElementById("drivers-license-life-err").hidden = false
-        console.log("out in odl")
         valid = false
       }
       document.getElementById("address-one-life-err").hidden = true
       if (addressOne.trim() == "") {
         document.getElementById("address-one-life-err").hidden = false
-        console.log("out in address")
         valid = false
       }
       document.getElementById("city-life-err").hidden = true
       if (city.trim() == "" || !isAlphaNumeric(city.trim())) {
         document.getElementById("city-life-err").hidden = false
-        console.log("out in city")
         valid = false
       }
       document.getElementById("state-life-err").hidden = true
       if (state.trim() == "") {
         document.getElementById("state-life-err").hidden = false
-        console.log("out in state")
         valid = false
       }
       document.getElementById("zip-life-err").hidden = true
       if (!zipTest.test(zip)) {
         document.getElementById("zip-life-err").hidden = false
-        console.log("out in zip")
         valid = false
       }
       document.getElementById("email-address-life-err").hidden = true
       if (!emailTest.test(email)) {
         document.getElementById("email-address-life-err").hidden = false
-        console.log("out in email")
         valid = false
       }
       document.getElementById("phone-number-life-err").hidden = true
       if (!phoneTest.test(phone)) {
         document.getElementById("phone-number-life-err").hidden = false
-        console.log("out in phone")
         valid = false
       }
       if (!valid) return
+
+      document.getElementById("first-name-life-hidden").value = fName
+      document.getElementById("middle-name-life-hidden").value = mName
+      document.getElementById("last-name-life-hidden").value = lName
+      document.getElementById("month-life-hidden").value = mDate
+      document.getElementById("day-life-hidden").value = dDate
+      document.getElementById("year-life-hidden").value = yDate
+      document.getElementById("drivers-license-life-hidden").value = odlNumber
+      document.getElementById("address-one-life-hidden").value = addressOne
+      document.getElementById("address-two-life-hidden").value = addressTwo
+      document.getElementById("city-life-hidden").value = city
+      document.getElementById("state-life-hidden").value = state
+      document.getElementById("zip-life-hidden").value = zip
+      document.getElementById("phone-number-life-hidden").value = phone
+      document.getElementById("email-address-life-hidden").value = email
+      document.getElementById("note-life-hidden").value = document.getElementById("note-life").value
+
+      document.getElementById("life-hidden-form-submit").click()
 
     }
 
@@ -574,6 +590,7 @@
             <label for="zip">Zip</label>
             <input type="number" name="zip" id="zip-home" placeholder="#####">
             <err id="zip-home-err" hidden>Required, 5 digits</err>
+            <label for="email-address">Email Address</label>
             <input type="email" name="_replyto" id="email-address-home" placeholder="email@domain.tld">
             <err id="email-address-home-err" hidden>Required</err>
             <label for="phone-number">Phone Number</label>
@@ -646,6 +663,7 @@
             <label for="employee-count">Number of Employees</label>
             <input type="number" name="employee-count" id="employee-count-commercial" placeholder="employee-count">
             <err id="employee-count-commercial-err" hidden>Required</err>
+            <label for="email-address">Email Address</label>
             <input type="email" name="_replyto" id="email-address-commercial" placeholder="email@domain.tld">
             <err id="email-address-commercial-err" hidden>Required</err>
             <label for="phone-number">Phone Number</label>
@@ -706,6 +724,7 @@
             <label for="zip">Zip</label>
             <input type="number" name="zip" id="zip-life" placeholder="#####">
             <err id="zip-life-err" hidden>Required, 5 digits</err>
+            <label for="email-address">Email Address</label>
             <input type="email" name="_replyto" id="email-address-life" placeholder="email@domain.tld">
             <err id="email-address-life-err" hidden>Required</err>
             <label for="phone-number">Phone Number</label>
@@ -730,20 +749,19 @@
 
 
   <!-- Hidden forms for submission functions -->
-  <div id="auto-hidden">
-    <form id="auto-hidden-form" name="auto-registration-form" accept-charset="utf-8">
+  <div id="auto-hidden" hidden>
+    <form id="auto-hidden-form" name="auto-registration-form" accept-charset="utf-8"
+      action="https://formspree.io/f/mkneqgvb" method="POST">
       <!-- https://formspree.io/f/mkneqgvb -->
       <fieldset id="fs-frm-inputs">
         <fieldset class="user-name">
-          <legend>Full Name</legend>
           <div>
-            <input type="text" name="first" id="first-name-auto-hidden" placeholder="First Name" required="">
+            <input type="text" name="first" id="first-name-auto-hidden" placeholder="First Name">
             <input type="text" name="middle" id="middle-name-auto-hidden" placeholder="Middle Name">
-            <input type="text" name="last" id="last-name-auto-hidden" placeholder="Last Name" required="">
+            <input type="text" name="last" id="last-name-auto-hidden" placeholder="Last Name">
           </div>
         </fieldset>
         <fieldset class="dateofbirth">
-          <legend>Date of Birth</legend>
           <div>
             <input type="number" name="month" id="month-auto-hidden" placeholder="MM">
             <input type="number" name="day" id="day-auto-hidden" placeholder="DD">
@@ -751,10 +769,10 @@
           </div>
         </fieldset>
         <label for="drivers-license number">Oregon Driver License Number</label>
-        <input type="text" name="drivers-license number" id="drivers-license-auto-hidden" placeholder="ID#" required="">
+        <input type="text" name="drivers-license number" id="drivers-license-auto-hidden" placeholder="ID#">
         <label for="vehicle identification number">Vehical Identification Number</label>
         <input type="text" name="vehicle identification number" id="vehicle-identification-number-auto-hidden"
-          placeholder="ID#" required="">
+          placeholder="ID#">
         <label for="address-one-auto">Address Line 1</label>
         <input type="text" name="address-one-auto" id="address-one-auto-hidden" placeholder="Address">
         <!-- Line 2 should be not required -->
@@ -767,14 +785,117 @@
         <label for="zip">Zip</label>
         <input type="number" name="zip" id="zip-auto-hidden" placeholder="#####">
         <label for="email-address">Email Address</label>
-        <input type="email" name="_replyto" id="email-address-auto-hidden" placeholder="email@domain.tld" required="">
+        <input type="email" name="_replyto" id="email-address-auto-hidden" placeholder="email@domain.tld">
         <label for="phone-number">Phone Number</label>
-        <input type="number" name="phone-number" id="phone-number-auto-hidden" placeholder="###-###-####" required="">
+        <input type="number" name="phone-number" id="phone-number-auto-hidden" placeholder="###-###-####">
         <input type="hidden" name="_subject" id="email-subject-auto-hidden" value="Registration Form Submission">
       </fieldset>
-      <input type="submit" value="Register">
+      <input type="submit" id="auto-hidden-form-submit" value="Register">
     </form>
   </div>
+
+  <div id="home-hidden" class="tabcontent" hidden>
+    <form id="home-hidden-form" name="home-registration-form" accept-charset="utf-8"
+      action="https://formspree.io/f/mkneqgvb" method="POST">
+      <fieldset id="fs-frm-inputs">
+        <fieldset class="user-name">
+          <div>
+            <input type="text" name="first" id="first-name-home-hidden">
+            <input type="text" name="middle" id="middle-name-home-hidden">
+            <input type="text" name="last" id="last-name-home-hidden">
+          </div>
+        </fieldset>
+        <fieldset class="dateofbirth">
+          <div>
+            <input type="number" name="month" id="month-home-hidden">
+            <input type="number" name="day" id="day-home-hidden">
+            <input type="number" name="year" id="year-home-hidden">
+          </div>
+        </fieldset>
+        <input type="text" name="drivers-license number" id="drivers-license-home-hidden">
+        <input type="text" name="address-one-home" id="address-one-home-hidden" placeholder="Address">
+        <input type="text" name="address-two-home" id="address-two-home-hidden" placeholder="Address">
+        <input type="text" name="city" id="city-home-hidden" placeholder="City">
+        <input type="text" name="state" id="state-home-hidden" placeholder="State" value="OR">
+        <input type="number" name="zip" id="zip-home-hidden" placeholder="#####">
+        <input type="email" name="_replyto" id="email-address-home-hidden" placeholder="email@domain.tld">
+        <input type="number" name="phone-number" id="phone-number-home-hidden" placeholder="###-###-####">
+        <input type="hidden" name="_subject" id="email-subject-home-hidden" value="Registration Form Submission">
+      </fieldset>
+      <input type="submit" id="home-hidden-form-submit" value="Register">
+    </form>
+  </div>
+
+  <div id="commercial-hidden" class="tabcontent" hidden>
+    <form id="commercial-hidden-form" name="commercial-registration-form" accept-charset="utf-8"
+      action="https://formspree.io/f/mkneqgvb" method="POST">
+      <fieldset id="fs-frm-inputs">
+        <input type="text" name="business-name" id="business-name-commercial-hidden">
+        <fieldset class="user-name">
+          <div>
+            <input type="text" name="first" id="first-name-commercial-hidden">
+            <input type="text" name="middle" id="middle-name-commercial-hidden">
+            <input type="text" name="last" id="last-name-commercial-hidden">
+          </div>
+        </fieldset>
+        <fieldset class="dateofbirth">
+          <div>
+            <input type="number" name="month" id="month-commercial-hidden">
+            <input type="number" name="day" id="day-commercial-hidden">
+            <input type="number" name="year" id="year-commercial-hidden">
+          </div>
+        </fieldset>
+        <input type="text" name="drivers-license number" id="drivers-license-commercial-hidden">
+        <input type="text" name="address-one-commercial" id="address-one-commercial-hidden">
+        <input type="text" name="address-two-commercial" id="address-two-commercial-hidden">
+        <input type="text" name="city" id="city-commercial-hidden">
+        <input type="text" name="state" id="state-commercial-hidden">
+        <input type="number" name="zip" id="zip-commercial-hidden">
+        <input type="text" name="annual-reciepts" id="annual-reciepts-commercial-hidden">
+        <input type="number" name="federal-id-number" id="federal-id-number-commercial-hidden">
+        <input type="number" name="employee-count" id="employee-count-commercial-hidden">
+        <input type="email" name="_replyto" id="email-address-commercial-hidden">
+        <input type="number" name="phone-number" id="phone-number-commercial-hidden">
+      </fieldset>
+      <input type="submit" id="commercial-hidden-form-submit" value="Register">
+    </form>
+  </div>
+
+  <div id="life-hidden" class="tabcontent" hidden>
+    <form id="life-hidden-form" name="life-registration-form" accept-charset="utf-8"
+      action="https://formspree.io/f/mkneqgvb" method="POST">
+      <fieldset id="fs-frm-inputs">
+        <fieldset class="user-name">
+          <legend>Full Name</legend>
+          <div>
+            <input type="text" name="first" id="first-name-life-hidden">
+            <input type="text" name="middle" id="middle-name-life-hidden">
+            <input type="text" name="last" id="last-name-life-hidden">
+          </div>
+        </fieldset>
+        <fieldset class="dateofbirth">
+          <legend>Date of Birth</legend>
+          <div>
+            <input type="number" name="month" id="month-life-hidden">
+            <input type="number" name="day" id="day-life-hidden">
+            <input type="number" name="year" id="year-life-hidden">
+          </div>
+        </fieldset>
+        <input type="text" name="drivers-license number" id="drivers-license-life-hidden">
+        <input type="text" name="address-one-life" id="address-one-life-hidden">
+        <input type="text" name="address-two-life" id="address-two-life-hidden">
+        <input type="text" name="city" id="city-life-hidden">
+        <input type="text" name="state" id="state-life-hidden">
+        <input type="number" name="zip" id="zip-life-hidden">
+        <input type="email" name="_replyto" id="email-address-life-hidden">
+        <input type="number" name="phone-number" id="phone-number-life-hidden">
+        <textarea rows="2" name="note" id="note-life-hidden"></textarea>
+        <input type="hidden" name="_subject" id="email-subject-life-hidden" value="Registration Form Submission">
+      </fieldset>
+      <input type="submit" id="life-hidden-form-submit" value="Register">
+    </form>
+  </div>
+
   </div>
 
 </body>
