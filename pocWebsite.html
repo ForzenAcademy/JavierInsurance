@@ -13,51 +13,36 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="primary-nav full length">
-                <div class="container-fluid align-items-center">
-                    <ul class="navbar-nav mr-auto">
-                        <div class="col-sm">
-                            <li class="nav-item active">
-                                <a class="navbar-brand" href="...">
-                                    <img src="family-first-insurance.png" width="116px" viewbox="0 0 116 32"
-                                        class="familyfirst-logo" focusable="false">
-                                    </img>
-                                </a>
-                            </li>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar-background">
+        <div class="primary-nav full length">
+            <div class="container-fluid ">
+                <ul class="navbar-nav mr-auto" id="top-navbar">
+                    <li class="nav-item active">
+                        <a class="navbar-brand" href="...">
+                            <img src="family-first-insurance.png" width="116px" viewbox="0 0 116 32"
+                                class="family-first-logo" focusable="false">
+                            </img>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <div class="navbar-brand">
+                            Family First Insurance
                         </div>
-                        <div class="col-sm">
-                            <li class="nav-item active">
-                                <div class="navbar-brand">
-                                    Family First Insurance
-                                </div>
-                            </li>
+                    </li>
+                    <li class="nav-item active">
+                        <div class="navbar-brand">
+                            Call: 503-313-1942
                         </div>
-                        <div class="col-sm">
-                            <li class="nav-item active">
-                                <div class="navbar-brand">
-                                    Call: 503-313-1942
-                                </div>
-                            </li>
-                        </div>
-                        <div class="col-sm">
-                            <li class="nav-item active">
-                                <div class="navbar-brand">
-                                    Javier De La O Bailon
-                                </div>
-                            </li>
-                        </div>
-                    </ul>
-                </div>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="form-container">
         <div class="row">
-            <div class="col-lg-2" id="form-filler-left" style="background-color: rgb(52, 66, 185);"></div>
-            <div class="col-lg-8" id="forms">
+            <div class="col col-sm-1 col-lg-2" id="form-filler-left"></div>
+            <div class="col col-sm-10 col-lg-8" id="forms">
                 <div class="top-overlap container-fluid containter-fluid-thin">
                     <div class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
                         <a class="nav-item nav-link" id="auto-tab" id="pills-auto-tab" data-bs-toggle="pill"
@@ -88,10 +73,12 @@
                         <div id="auto" class="tabcontent">
                             <form id="fs-frm" name="auto-registration-form" accept-charset="utf-8"
                                 onSubmit="return false">
-                                <fieldset id="fs-frm-inputs">
-                                    <fieldset class="user-name">
-                                        <legend>Full Name</legend>
-                                        <div>
+                                <div id="fs-frm-inputs">
+                                    <div class="row">
+                                        <legend>Name</legend>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
                                             <input type="text" name="first" id="first-name-auto"
                                                 placeholder="First Name">
                                             <input type="text" name="middle" id="middle-name-auto"
@@ -103,10 +90,12 @@
                                             <err id="middle-name-auto-err" hidden>Alphanumeric only</err>
                                             <err id="last-name-auto-err" hidden>Required Field, Alphanumeric only</err>
                                         </div>
-                                    </fieldset>
-                                    <fieldset class="dateofbirth">
+                                    </div>
+                                    <div class="row">
                                         <legend>Date of Birth</legend>
-                                        <div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
                                             <input type="number" name="month" id="month-auto" placeholder="MM">
                                             <input type="number" name="day" id="day-auto" placeholder="DD">
                                             <input type="number" name="year" id="year-auto" placeholder="YYYY">
@@ -116,44 +105,77 @@
                                             <err id="day-auto-err" hidden>Required, 1-31</err>
                                             <err id="year-auto-err" hidden>Required, 1922-2010</err>
                                         </div>
-                                    </fieldset>
-                                    <label for="drivers-license number">Oregon Driver License Number</label>
-                                    <input type="text" name="drivers-license number" id="drivers-license-auto"
-                                        placeholder="ID#">
-                                    <err id="drivers-license-auto-err" hidden>Required,7 characters</err>
-                                    <label for="vehicle identification number">Vehical Identification Number</label>
-                                    <input type="text" name="vehicle identification number"
-                                        id="vehicle-identification-number-auto" placeholder="ID#">
-                                    <err id="vehicle-identification-number-auto-err" hidden>Required,17 characters</err>
-                                    <label for="address-one-auto">Address Line 1</label>
-                                    <input type="text" name="address-one-auto" id="address-one-auto"
-                                        placeholder="Address">
-                                    <err id="address-one-auto-err" hidden>Required</err>
-                                    <!-- Line 2 should be not required -->
-                                    <label for="address-two-auto">Address Line 2</label>
-                                    <input type="text" name="address-two-auto" id="address-two-auto"
-                                        placeholder="Address">
-                                    <label for="city">City</label>
-                                    <input type="text" name="city" id="city-auto" placeholder="City">
-                                    <err id="city-auto-err" hidden>Required</err>
-                                    <label for="state">State</label>
-                                    <input type="text" name="state" id="state-auto" placeholder="State" value="OR">
-                                    <err id="state-auto-err" hidden>Required</err>
-                                    <label for="zip">Zip</label>
-                                    <input type="number" name="zip" id="zip-auto" placeholder="#####">
-                                    <err id="zip-auto-err" hidden>Required, 5 digits</err>
-                                    <label for="email-address">Email Address</label>
-                                    <input type="email" name="_replyto" id="email-address-auto"
-                                        placeholder="email@domain.tld">
-                                    <err id="email-address-auto-err" hidden>Required</err>
-                                    <label for="phone-number">Phone Number</label>
-                                    <input type="number" name="phone-number" id="phone-number-auto"
-                                        placeholder="###-###-####">
-                                    <err id="phone-number-auto-err" hidden>Required, no special characters</err>
-                                    <input type="hidden" name="_subject" id="email-subject-auto"
-                                        value="Registration Form Submission">
-                                </fieldset>
-                                <input type="submit" value="Register" onclick="submitAuto()">
+                                    </div>
+                                    <div class="row">
+                                        <legend>Identification</legend>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
+                                            <label for="drivers-license number">Oregon Driver License Number</label>
+                                            <input type="text" name="drivers-license number" id="drivers-license-auto"
+                                                placeholder="ID#">
+                                            <label for="vehicle identification number">VIN</label>
+                                            <input type="text" name="vehicle identification number"
+                                                id="vehicle-identification-number-auto" placeholder="ID#" maxlength="17"
+                                                size="17">
+                                        </div>
+                                        <div>
+                                            <err id="drivers-license-auto-err" hidden>Required,7 characters</err>
+                                            <err id="vehicle-identification-number-auto-err" hidden>Required,17
+                                                characters
+                                            </err>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <legend>Address</legend>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
+                                            <label for="address-one-auto">Address Line 1</label>
+                                            <input type="text" name="address-one-auto" id="address-one-auto"
+                                                placeholder="Address">
+                                            <err id="address-one-auto-err" hidden>Required</err>
+                                            <!-- Line 2 should be not required -->
+                                            <label for="address-two-auto">Address Line 2</label>
+                                            <input type="text" name="address-two-auto" id="address-two-auto"
+                                                placeholder="Address">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
+                                            <label for="city">City</label>
+                                            <input type="text" name="city" id="city-auto" placeholder="City">
+                                            <err id="city-auto-err" hidden>Required</err>
+                                            <label for="state">State</label>
+                                            <input type="text" name="state" id="state-auto" placeholder="State"
+                                                value="OR" maxlength="2" size="2">
+                                            <err id="state-auto-err" hidden>Required</err>
+                                            <label for="zip">Zip</label>
+                                            <input type="number" name="zip" id="zip-auto" placeholder="#####">
+                                            <err id="zip-auto-err" hidden>Required, 5 digits</err>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <legend>Contact</legend>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
+                                            <label for="email-address">Email Address</label>
+                                            <input type="email" name="_replyto" id="email-address-auto"
+                                                placeholder="email@domain.tld">
+                                            <err id="email-address-auto-err" hidden>Required</err>
+                                            <label for="phone-number">Phone Number</label>
+                                            <input type="number" name="phone-number" id="phone-number-auto"
+                                                placeholder="###-###-####" maxlength="16" size="16">
+                                            <err id="phone-number-auto-err" hidden>Required, no special characters</err>
+                                            <input type="hidden" name="_subject" id="email-subject-auto"
+                                                value="Registration Form Submission">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Register" onclick="submitAuto()">
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -164,9 +186,11 @@
                         <div id="home" class="tabcontent">
                             <form id="fs-frm" name="home-registration-form" accept-charset="utf-8"
                                 onSubmit="return false">
-                                <fieldset id="fs-frm-inputs">
-                                    <fieldset class="user-name">
-                                        <legend>Full Name</legend>
+                                <div id="fs-frm-inputs">
+                                    <div class="row">
+                                        <legend>Name</legend>
+                                    </div>
+                                    <div class="row">
                                         <div>
                                             <input type="text" name="first" id="first-name-home"
                                                 placeholder="First Name">
@@ -179,9 +203,11 @@
                                             <err id="middle-name-home-err" hidden>Alphanumeric only</err>
                                             <err id="last-name-home-err" hidden>Required Field, Alphanumeric only</err>
                                         </div>
-                                    </fieldset>
-                                    <fieldset class="dateofbirth">
+                                    </div>
+                                    <div class="row">
                                         <legend>Date of Birth</legend>
+                                    </div>
+                                    <div class="row">
                                         <div>
                                             <input type="number" name="month" id="month-home" placeholder="MM">
                                             <input type="number" name="day" id="day-home" placeholder="DD">
@@ -192,38 +218,74 @@
                                             <err id="day-home-err" hidden>Required, 1-31</err>
                                             <err id="year-home-err" hidden>Required, 1922-2010</err>
                                         </div>
-                                    </fieldset>
-                                    <label for="drivers-license number">Oregon Driver License Number</label>
-                                    <input type="text" name="drivers-license number" id="drivers-license-home"
-                                        placeholder="ID#">
-                                    <err id="drivers-license-home-err" hidden>Required,7 characters</err>
-                                    <label for="address-one-home">Address Line 1</label>
-                                    <input type="text" name="address-one-home" id="address-one-home"
-                                        placeholder="Address">
-                                    <err id="address-one-home-err" hidden>Required</err>
-                                    <label for="address-two-home">Address Line 2</label>
-                                    <input type="text" name="address-two-home" id="address-two-home"
-                                        placeholder="Address">
-                                    <label for="city">City</label>
-                                    <input type="text" name="city" id="city-home" placeholder="City">
-                                    <err id="city-home-err" hidden>Required</err>
-                                    <label for="state">State</label>
-                                    <input type="text" name="state" id="state-home" placeholder="State" value="OR">
-                                    <err id="state-home-err" hidden>Required</err>
-                                    <label for="zip">Zip</label>
-                                    <input type="number" name="zip" id="zip-home" placeholder="#####">
-                                    <err id="zip-home-err" hidden>Required, 5 digits</err>
-                                    <label for="email-address">Email Address</label>
-                                    <input type="email" name="_replyto" id="email-address-home"
-                                        placeholder="email@domain.tld">
-                                    <err id="email-address-home-err" hidden>Required</err>
-                                    <label for="phone-number">Phone Number</label>
-                                    <input type="number" name="phone-number" id="phone-number-home"
-                                        placeholder="###-###-####">
-                                    <err id="phone-number-home-err" hidden>Required, no special characters</err>
-                                    <input type="hidden" name="_subject" id="email-subject-home"
-                                        value="Registration Form Submission">
-                                </fieldset>
+                                    </div>
+                                    <div class="row">
+                                        <legend>Identification</legend>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
+                                            <label for="drivers-license number">Oregon Driver License Number</label>
+                                            <input type="text" name="drivers-license number" id="drivers-license-auto"
+                                                placeholder="ID#">
+                                            <label for="vehicle identification number">VIN</label>
+                                            <input type="text" name="vehicle identification number"
+                                                id="vehicle-identification-number-auto" placeholder="ID#" maxlength="17"
+                                                size="17">
+                                        </div>
+                                        <div>
+                                            <err id="drivers-license-auto-err" hidden>Required,7 characters</err>
+                                            <err id="vehicle-identification-number-auto-err" hidden>Required,17
+                                                characters
+                                            </err>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <legend>Address</legend>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
+                                            <label for="address-one-auto">Address Line 1</label>
+                                            <input type="text" name="address-one-auto" id="address-one-auto"
+                                                placeholder="Address">
+                                            <err id="address-one-auto-err" hidden>Required</err>
+                                            <!-- Line 2 should be not required -->
+                                            <label for="address-two-auto">Address Line 2</label>
+                                            <input type="text" name="address-two-auto" id="address-two-auto"
+                                                placeholder="Address">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
+                                            <label for="city">City</label>
+                                            <input type="text" name="city" id="city-auto" placeholder="City">
+                                            <err id="city-auto-err" hidden>Required</err>
+                                            <label for="state">State</label>
+                                            <input type="text" name="state" id="state-auto" placeholder="State"
+                                                value="OR" maxlength="2" size="2">
+                                            <err id="state-auto-err" hidden>Required</err>
+                                            <label for="zip">Zip</label>
+                                            <input type="number" name="zip" id="zip-auto" placeholder="#####">
+                                            <err id="zip-auto-err" hidden>Required, 5 digits</err>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <legend>Contact</legend>
+                                    </div>
+                                    <div class="row">
+                                        <div class="field">
+                                            <label for="email-address">Email Address</label>
+                                            <input type="email" name="_replyto" id="email-address-auto"
+                                                placeholder="email@domain.tld">
+                                            <err id="email-address-auto-err" hidden>Required</err>
+                                            <label for="phone-number">Phone Number</label>
+                                            <input type="number" name="phone-number" id="phone-number-auto"
+                                                placeholder="###-###-####" maxlength="16" size="16">
+                                            <err id="phone-number-auto-err" hidden>Required, no special characters</err>
+                                            <input type="hidden" name="_subject" id="email-subject-auto"
+                                                value="Registration Form Submission">
+                                        </div>
+                                    </div>
+                                </div>
                                 <input type="submit" value="Register" onclick="submitHome()">
                             </form>
                         </div>
@@ -235,12 +297,12 @@
                         <div id="commercial" class="tabcontent">
                             <form id="fs-frm" name="commercial-registration-form" accept-charset="utf-8"
                                 onSubmit="return false">
-                                <fieldset id="fs-frm-inputs">
+                                <div id="fs-frm-inputs">
                                     <label for="business-name">Business Name</label>
                                     <input type="text" name="business-name" id="business-name-commercial"
                                         placeholder="Business Name">
                                     <err id="business-name-commercial-err" hidden>Required Field</err>
-                                    <fieldset class="user-name">
+                                    <div class="user-name">
                                         <legend>Full Name</legend>
                                         <div>
                                             <input type="text" name="first" id="first-name-commercial"
@@ -257,8 +319,8 @@
                                             <err id="last-name-commercial-err" hidden>Required Field, Alphanumeric only
                                             </err>
                                         </div>
-                                    </fieldset>
-                                    <fieldset class="dateofbirth">
+                                    </div>
+                                    <div class="dateofbirth">
                                         <legend>Date of Birth</legend>
                                         <div>
                                             <input type="number" name="month" id="month-commercial" placeholder="MM">
@@ -270,7 +332,7 @@
                                             <err id="day-commercial-err" hidden>Required, 1-31</err>
                                             <err id="year-commercial-err" hidden>Required, 1922-2010</err>
                                         </div>
-                                    </fieldset>
+                                    </div>
                                     <label for="drivers-license number">Oregon Driver License Number</label>
                                     <input type="text" name="drivers-license number" id="drivers-license-commercial"
                                         placeholder="ID#">
@@ -312,7 +374,7 @@
                                         placeholder="###-###-####">
                                     <err id="phone-number-commercial-err" hidden>Required, no special characters</err>
 
-                                </fieldset>
+                                </div>
                                 <input type="submit" value="Register" onclick="submitCommercial()">
                             </form>
                         </div>
@@ -324,8 +386,8 @@
                         <div id="life" class="tabcontent">
                             <form id="fs-frm" name="life-registration-form" accept-charset="utf-8"
                                 onSubmit="return false">
-                                <fieldset id="fs-frm-inputs">
-                                    <fieldset class="user-name">
+                                <div id="fs-frm-inputs">
+                                    <div class="user-name">
                                         <legend>Full Name</legend>
                                         <div>
                                             <input type="text" name="first" id="first-name-life"
@@ -339,8 +401,8 @@
                                             <err id="middle-name-life-err" hidden>Alphanumeric only</err>
                                             <err id="last-name-life-err" hidden>Required Field, Alphanumeric only</err>
                                         </div>
-                                    </fieldset>
-                                    <fieldset class="dateofbirth">
+                                    </div>
+                                    <div class="dateofbirth">
                                         <legend>Date of Birth</legend>
                                         <div>
                                             <input type="number" name="month" id="month-life" placeholder="MM">
@@ -352,7 +414,7 @@
                                             <err id="day-life-err" hidden>Required, 1-31</err>
                                             <err id="year-life-err" hidden>Required, 1922-2010</err>
                                         </div>
-                                    </fieldset>
+                                    </div>
                                     <label for="drivers-license number">Oregon Driver License Number</label>
                                     <input type="text" name="drivers-license number" id="drivers-license-life"
                                         placeholder="ID#">
@@ -386,7 +448,7 @@
                                         placeholder="Include any medical information on any chronic illnesses"></textarea>
                                     <input type="hidden" name="_subject" id="email-subject-life"
                                         value="Registration Form Submission">
-                                </fieldset>
+                                </div>
                                 <input type="submit" value="Register" onclick="submitLife()">
                             </form>
                         </div>
@@ -399,8 +461,8 @@
                         <form id="auto-hidden-form" name="auto-registration-form" accept-charset="utf-8"
                             action="https://formspree.io/f/mkneqgvb" method="POST">
                             <!-- https://formspree.io/f/mkneqgvb -->
-                            <fieldset id="fs-frm-inputs">
-                                <fieldset class="user-name">
+                            <div id="fs-frm-inputs">
+                                <div class="user-name">
                                     <div>
                                         <input type="text" name="first" id="first-name-auto-hidden"
                                             placeholder="First Name">
@@ -409,14 +471,14 @@
                                         <input type="text" name="last" id="last-name-auto-hidden"
                                             placeholder="Last Name">
                                     </div>
-                                </fieldset>
-                                <fieldset class="dateofbirth">
+                                </div>
+                                <div class="dateofbirth">
                                     <div>
                                         <input type="number" name="month" id="month-auto-hidden" placeholder="MM">
                                         <input type="number" name="day" id="day-auto-hidden" placeholder="DD">
                                         <input type="number" name="year" id="year-auto-hidden" placeholder="YYYY">
                                     </div>
-                                </fieldset>
+                                </div>
                                 <label for="drivers-license number">Oregon Driver License Number</label>
                                 <input type="text" name="drivers-license number" id="drivers-license-auto-hidden"
                                     placeholder="ID#">
@@ -444,7 +506,7 @@
                                     placeholder="###-###-####">
                                 <input type="hidden" name="_subject" id="email-subject-auto-hidden"
                                     value="Registration Form Submission">
-                            </fieldset>
+                            </div>
                             <input type="submit" id="auto-hidden-form-submit" value="Register">
                         </form>
                     </div>
@@ -452,21 +514,21 @@
                     <div id="home-hidden" class="tabcontent" hidden>
                         <form id="home-hidden-form" name="home-registration-form" accept-charset="utf-8"
                             action="https://formspree.io/f/mkneqgvb" method="POST">
-                            <fieldset id="fs-frm-inputs">
-                                <fieldset class="user-name">
+                            <div id="fs-frm-inputs">
+                                <div class="user-name">
                                     <div>
                                         <input type="text" name="first" id="first-name-home-hidden">
                                         <input type="text" name="middle" id="middle-name-home-hidden">
                                         <input type="text" name="last" id="last-name-home-hidden">
                                     </div>
-                                </fieldset>
-                                <fieldset class="dateofbirth">
+                                </div>
+                                <div class="dateofbirth">
                                     <div>
                                         <input type="number" name="month" id="month-home-hidden">
                                         <input type="number" name="day" id="day-home-hidden">
                                         <input type="number" name="year" id="year-home-hidden">
                                     </div>
-                                </fieldset>
+                                </div>
                                 <input type="text" name="drivers-license number" id="drivers-license-home-hidden">
                                 <input type="text" name="address-one-home" id="address-one-home-hidden"
                                     placeholder="Address">
@@ -481,7 +543,7 @@
                                     placeholder="###-###-####">
                                 <input type="hidden" name="_subject" id="email-subject-home-hidden"
                                     value="Registration Form Submission">
-                            </fieldset>
+                            </div>
                             <input type="submit" id="home-hidden-form-submit" value="Register">
                         </form>
                     </div>
@@ -489,22 +551,22 @@
                     <div id="commercial-hidden" class="tabcontent" hidden>
                         <form id="commercial-hidden-form" name="commercial-registration-form" accept-charset="utf-8"
                             action="https://formspree.io/f/mkneqgvb" method="POST">
-                            <fieldset id="fs-frm-inputs">
+                            <div id="fs-frm-inputs">
                                 <input type="text" name="business-name" id="business-name-commercial-hidden">
-                                <fieldset class="user-name">
+                                <div class="user-name">
                                     <div>
                                         <input type="text" name="first" id="first-name-commercial-hidden">
                                         <input type="text" name="middle" id="middle-name-commercial-hidden">
                                         <input type="text" name="last" id="last-name-commercial-hidden">
                                     </div>
-                                </fieldset>
-                                <fieldset class="dateofbirth">
+                                </div>
+                                <div class="dateofbirth">
                                     <div>
                                         <input type="number" name="month" id="month-commercial-hidden">
                                         <input type="number" name="day" id="day-commercial-hidden">
                                         <input type="number" name="year" id="year-commercial-hidden">
                                     </div>
-                                </fieldset>
+                                </div>
                                 <input type="text" name="drivers-license number" id="drivers-license-commercial-hidden">
                                 <input type="text" name="address-one-commercial" id="address-one-commercial-hidden">
                                 <input type="text" name="address-two-commercial" id="address-two-commercial-hidden">
@@ -516,7 +578,7 @@
                                 <input type="number" name="employee-count" id="employee-count-commercial-hidden">
                                 <input type="email" name="_replyto" id="email-address-commercial-hidden">
                                 <input type="number" name="phone-number" id="phone-number-commercial-hidden">
-                            </fieldset>
+                            </div>
                             <input type="submit" id="commercial-hidden-form-submit" value="Register">
                         </form>
                     </div>
@@ -524,23 +586,23 @@
                     <div id="life-hidden" class="tabcontent" hidden>
                         <form id="life-hidden-form" name="life-registration-form" accept-charset="utf-8"
                             action="https://formspree.io/f/mkneqgvb" method="POST">
-                            <fieldset id="fs-frm-inputs">
-                                <fieldset class="user-name">
+                            <div id="fs-frm-inputs">
+                                <div class="user-name">
                                     <legend>Full Name</legend>
                                     <div>
                                         <input type="text" name="first" id="first-name-life-hidden">
                                         <input type="text" name="middle" id="middle-name-life-hidden">
                                         <input type="text" name="last" id="last-name-life-hidden">
                                     </div>
-                                </fieldset>
-                                <fieldset class="dateofbirth">
+                                </div>
+                                <div class="dateofbirth">
                                     <legend>Date of Birth</legend>
                                     <div>
                                         <input type="number" name="month" id="month-life-hidden">
                                         <input type="number" name="day" id="day-life-hidden">
                                         <input type="number" name="year" id="year-life-hidden">
                                     </div>
-                                </fieldset>
+                                </div>
                                 <input type="text" name="drivers-license number" id="drivers-license-life-hidden">
                                 <input type="text" name="address-one-life" id="address-one-life-hidden">
                                 <input type="text" name="address-two-life" id="address-two-life-hidden">
@@ -552,17 +614,17 @@
                                 <textarea rows="2" name="note" id="note-life-hidden"></textarea>
                                 <input type="hidden" name="_subject" id="email-subject-life-hidden"
                                     value="Registration Form Submission">
-                            </fieldset>
+                            </div>
                             <input type="submit" id="life-hidden-form-submit" value="Register">
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2" id="form-filler-right" style="background-color: rgb(50, 95, 190);"></div>
+            <div class="col col-sm-1 col-lg-2" id="form-filler-right"></div>
         </div>
     </div>
 
-    <div class="container-fluid p-5">
+    <div class="container-fluid p-5" id="informational-text">
         <div class="categorytext">The Facts About Auto Insurance </div><br>
 
         <div class="descriptivetext"> Insurance is a complicated matter. Many people have an insurance policy
