@@ -187,3 +187,16 @@ input {
   text-align: center;
   color: rgb(209, 205, 199);
 }
+
+#blockone,
+#blockthree {
+  background-color: tan;
+}
+
+#blocktwo {
+  background-color: pink;
+}
+
+#testimonial-name {
+  font-size: larger;
+}
