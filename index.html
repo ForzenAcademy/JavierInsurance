@@ -9,28 +9,30 @@
     <link href="styles.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts.js"></script>
-    <style>
-        body {
-            background: black;
-            font-family: 'Montserrat', serif !important;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container-fluid" id="form-container">
         <!-- Banner -->
-        <div class="row">
-            <img src="img/topbanner.png" />
+        <div class="d-flex row" id="top-contact-banner">
+            <div class="col p-2 col-xs-2 col-sm-2 col-md-4 col-lg-6">
+                <div>Family First Insurance</div>
+            </div>
+            <div class="col p-2 col-xs-2 col-sm-2 col-md-4 col-lg-6">
+                <div>Contact Me: 503-313-1942</div>
+            </div>
         </div>
-        <!-- Main content view -->
-        <div class="row">
-            <!-- Left padding -->
-            <div class="col-xs-0 col-sm-1 col-lg-2" id="form-filler-left"></div>
-            <!-- Content -->
-            <div class="col-sm-10 col-lg-8" id="forms">
-                <div class="container-fluid">
-                    <!-- Tabs -->
+        <!-- Banner -->
+        <div class="d-flex row" id="business-banner">
+            <div class="d-flex flex-col p-4 col-lg-6" id="quote-text">
+                <div> Request A Quote</div>
+            </div>
+            <div class="col flex-col p-4 col-lg-6" id="company-logo">
+                <img id="business-logo" src="family-first-insurance.png">
+            </div>
+            <div class="row">
+                <div class="col-xs-0 col-sm-1 col-lg-2" id="form-tab-filler"></div>
+                <div class="col-sm-10 col-lg-8">
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                             <button class="nav-link active" id="nav-auto-tab" data-bs-toggle="tab"
@@ -45,6 +47,18 @@
                                 type="button" role="tab" aria-controls="nav-life" aria-selected="false">Life</button>
                         </div>
                     </nav>
+                </div>
+                <div class="col-xs-0 col-sm-1 col-lg-2" id="form-tab-filler"></div>
+            </div>
+        </div>
+        <!-- Main content view -->
+        <div class="row">
+            <!-- Left padding -->
+            <div class="col-xs-0 col-sm-1 col-lg-2" id="form-filler"></div>
+            <!-- Content -->
+            <div class="col-sm-10 col-lg-8" id="forms">
+                <div class="container-fluid">
+                    <!-- Tabs -->
                     <!-- Forms -->
                     <div class="tab-content" id="nav-tabContent">
                         <!-- Auto -->
@@ -810,6 +824,12 @@
                     </div>
                     <!-- Who insurance is offered through -->
                     <div class="row">
+                        <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3">
+
+                        </div>
+                        <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3">
+
+                        </div>
                         <img src="img/midbanner.png" />
                     </div>
                     <!-- Javier's face -->
@@ -855,7 +875,7 @@
                 </div>
             </div>
             <!-- Right padding -->
-            <div class="col-xs-0 col-sm-1 col-lg-2" id="form-filler-left"></div>
+            <div class="col-xs-0 col-sm-1 col-lg-2" id="form-filler"></div>
         </div>
         <div class="row">
             <img src="img/footer.png" />
@@ -871,10 +891,12 @@
 <!--
 
 TODO:
+Top Thin "Navbar" as a row with Name of Owner and Phone# | Done?
+Thicker Banner with Logo and Name of Business | Done?
 
 Update forms and integrate with js
 
-Some sort of header banner
+Some sort of header banner | Done?
 
 The form is way too wide
 

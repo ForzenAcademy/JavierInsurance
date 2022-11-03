@@ -1,93 +1,46 @@
-.wrapper {
-  position: relative;
-}
-
-.card {
-  height: 90%;
-  text-align: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  -webkit-box-shadow: 0 0 10px 10px #cccccc;
-  -moz-box-shadow: 0 0 10px 10px #cccccc;
-  box-shadow: 0 0 10px 10px #cccccc;
-}
-
-.ownername,
-.languagetext,
-.phone-number {
-  text-align: end;
-}
-
-.ownername {
-  font-size: x-large;
-}
-
-.languagetext {
-  font-size: large;
-}
-
-.phone-number {
-  color: lightgreen;
-}
-
-.sitename {
-  font-size: xx-large;
-}
-
-.descriptivetext,
-.categorytext {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 1%;
-}
-
-.descriptivetext {
-  font-size: large;
-  text-align: center;
-}
-
-.descriptivetext::first-letter {
-  font-size: 1.15rem;
-  font-weight: bold;
-  color: #f57c20;
-}
-
-.categorytext {
-  font-size: xx-large;
-  text-align: center;
-  color: #f57c20;
-}
-
-.formcard {
-  border: #fd9d0d;
-  background-color: #88c9ff;
-  text-align: center;
-  padding: 4%;
-  margin: 4%;
-  -webkit-box-shadow: 0 0 15px 15px #cccccc;
-  -moz-box-shadow: 0 0 15px 15px #cccccc;
-  box-shadow: 0 0 15px 15px #cccccc;
-  z-index: 1;
-}
-
-/* #auto,
-#home,
-#commercial,
-#life {
-  background-color: #2b35ca;
-} */
-
-.card-img-top {
-  align-items: center;
-}
-
-.autobtn,
-.homebtn,
-.buisbtn,
-.lifebtn {
-  position: absolute;
-  text-align: center;
-}
-
-#nav-tabContent {
+body {
+  background: black;
   color: white;
+  font-family: 'Montserrat', serif !important;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#top-contact-banner {
+  background-color: rgb(34, 50, 82);
+  justify-content: center;
+  font-size: 2.5vw;
+  font-weight: 600;
+}
+
+#business-banner {
+  background-color: rgb(90, 129, 207);
+  justify-content: center;
+  font-size: 5vw;
+  font-weight: 700;
+}
+
+.nav-link {
+  background-color: black !important;
+  color: white;
+  font-size: 2.5vw;
+  width: stretch;
+  height: fit-content;
+}
+
+#company-logo {
+  align-self: center;
+  width: stretch;
+  height: fit-content;
+}
+
+#quote-text {
+  align-self: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+#form-filler {
+  background-color: rgb(34, 50, 82);
 }
