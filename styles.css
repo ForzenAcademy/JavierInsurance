@@ -87,3 +87,7 @@
   position: absolute;
   text-align: center;
 }
+
+#nav-tabContent {
+  color: white;
+}
