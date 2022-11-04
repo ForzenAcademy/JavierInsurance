@@ -2,7 +2,7 @@ body {
   background: black;
   color: white;
   font-family: 'Montserrat', serif !important;
-  font-size: 2vw;
+  font-size: 1vw;
   font-weight: 500;
   text-align: center;
 }
@@ -10,15 +10,20 @@ body {
 #top-contact-banner {
   background-color: rgb(34, 50, 82);
   justify-content: center;
-  font-size: 2.5vw;
+  font-size: 2vw;
   font-weight: 600;
 }
 
 #business-banner {
   background-color: rgb(90, 129, 207);
   justify-content: center;
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 700;
+}
+
+#business-logo-navbar {
+  max-width: 4vw;
+  max-height: 4vw;
 }
 
 #javiers-face-text {
@@ -26,31 +31,40 @@ body {
   justify-content: center;
 }
 
+#company-logo {
+  max-width: 10vw;
+  max-height: 10vw;
+}
+
 #contact-javier {
   align-self: center;
   justify-content: center;
-  font-size: 4vw;
+  font-size: 3vw;
 }
 
 #testimonial-name {
   align-self: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 3.5vw;
+  font-size: 3vw;
 }
 
 #testimonial-text {
   align-self: center;
   justify-content: center;
-  font-size: 2.5vw;
+  font-size: 2vw;
 }
 
 .nav-link {
   background-color: rgb(35, 35, 120) !important;
   color: white;
-  font-size: 2.5vw;
+  font-size: 1.5vw;
   width: stretch;
   height: fit-content;
+}
+
+.nav-link.active {
+  background-color: rgb(54, 54, 218) !important;
 }
 
 #forms {
@@ -73,6 +87,28 @@ body {
   background-color: rgb(34, 50, 82);
 }
 
+#form-filler-inside {
+  background-color: rgb(35, 35, 120);
+}
+
 #form-tab-filler {
   background-color: rgb(90, 129, 207);
 }
+
+/* 
+<!--
+TODO:
+change text on button to say "Get Quote"
+put phone icone on left of call me number
+shrink the form size using columns on the left and right
+move commercial form options to top (Business Stuff), Split into fewer sections
+remove all labels, improve hints
+Border around javier's image
+Image for testimonials
+Written testimonials
+New copy for everything
+CSS finished
+Second page
+Google analytics
+Spanish
+--> */
