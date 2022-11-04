@@ -95,6 +95,21 @@ body {
   background-color: rgb(90, 129, 207);
 }
 
+#footer-filler,
+#footer {
+  background-color: rgb(240, 240, 240);
+  font-size: medium;
+  color: black;
+}
+
+#testimonial-name {
+  font-size: large;
+}
+
+#testimonial-text {
+  font-size: medium;
+}
+
 /* 
 <!--
 TODO:
@@ -104,7 +119,6 @@ shrink the form size using columns on the left and right
 move commercial form options to top (Business Stuff), Split into fewer sections
 remove all labels, improve hints
 Border around javier's image
-Image for testimonials
 Written testimonials
 New copy for everything
 CSS finished
