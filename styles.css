@@ -2,7 +2,7 @@ body {
   background: black;
   color: white;
   font-family: 'Montserrat', serif !important;
-  font-size: 16px;
+  font-size: 2vw;
   font-weight: 500;
   text-align: center;
 }
@@ -21,12 +21,40 @@ body {
   font-weight: 700;
 }
 
+#javiers-face-text {
+  align-self: center;
+  justify-content: center;
+}
+
+#contact-javier {
+  align-self: center;
+  justify-content: center;
+  font-size: 4vw;
+}
+
+#testimonial-name {
+  align-self: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 3.5vw;
+}
+
+#testimonial-text {
+  align-self: center;
+  justify-content: center;
+  font-size: 2.5vw;
+}
+
 .nav-link {
-  background-color: black !important;
+  background-color: rgb(35, 35, 120) !important;
   color: white;
   font-size: 2.5vw;
   width: stretch;
   height: fit-content;
+}
+
+#forms {
+  background-color: rgb(35, 35, 120) !important;
 }
 
 #company-logo {
@@ -43,4 +71,8 @@ body {
 
 #form-filler {
   background-color: rgb(34, 50, 82);
+}
+
+#form-tab-filler {
+  background-color: rgb(90, 129, 207);
 }
