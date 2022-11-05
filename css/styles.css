@@ -110,6 +110,49 @@ body {
   font-size: medium;
 }
 
+#review-hr-left,
+#review-hr-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#review-stars {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#star {
+  max-width: 3.5vw;
+}
+
+#testimonial-container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#testimonial-container-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+#testimonial-img {
+  border-radius: 50%;
+  border: 5px solid rgb(240, 240, 240);
+}
+
+#contact-img {
+  max-width: 33vw;
+}
+
+/* #review {
+  display: flex;
+} */
+
 /* 
 <!--
 TODO:
