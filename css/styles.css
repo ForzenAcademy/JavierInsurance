@@ -187,15 +187,32 @@ body {
   background-color: rgb(93, 152, 233);
 }
 
+#testimonials {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.testimonial-copy {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 #testimonial-img {
-  justify-content: center;
   border-radius: 50%;
   border: 5px solid rgb(240, 240, 240);
 }
 
+#contact-img-container {
+  display: flex;
+  padding: 2em;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #contact-img {
+  border-radius: 50%;
+  border: 5px solid rgb(240, 240, 240);
   max-width: 100%;
-  padding: 32px;
 }
 
 #top-call-us {
@@ -236,6 +253,8 @@ body {
 .sectionpadding {
   padding-top: 48px;
   padding-bottom: 48px;
+  margin-left: 0px;
+  padding-right: 0px;
 }
 
 .mainbg {
