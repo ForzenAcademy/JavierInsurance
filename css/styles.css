@@ -19,6 +19,7 @@ body {
   justify-content: center;
   font-size: 4rem;
   font-weight: 700;
+  row-gap: 0;
 }
 
 #business-logo-navbar {
@@ -76,13 +77,15 @@ body {
   justify-content: center;
 }
 
+#info-text {
+  text-align: center;
+}
+
 .nav-link {
   background-color: rgb(40, 117, 226) !important;
   color: rgb(150, 150, 150) !important;
   border-color: rgb(12, 55, 110) !important;
   font-size: 1.5rem;
-  width: stretch;
-  height: fit-content;
 }
 
 .nav-link.active {
@@ -93,6 +96,7 @@ body {
 
 #forms {
   background-color: rgb(63, 132, 229) !important;
+  align-items: center;
 }
 
 #company-logo {
