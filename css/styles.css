@@ -13,11 +13,12 @@ body {
 }
 
 #business-banner {
-  background-color: #06afef;
   justify-content: center;
   font-size: 4em;
   font-weight: 700;
-  row-gap: 0;
+  background-image: url('../img/banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #business-logo-navbar {
@@ -116,8 +117,7 @@ body {
 
 #quote-text {
   text-align: center;
-  font-size: 4em;
-  background-color: #06AFEF;
+  font-size: 1em;
 }
 
 #form-filler {
