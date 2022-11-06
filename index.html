@@ -13,34 +13,36 @@
 
 <body>
     <div class="container-fluid" id="form-container">
-        <!-- Banner -->
-        <div class="d-flex row" id="top-contact-banner">
-            <div class="col p-2 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <!-- Nav Bar -->
+        <div class="row" id="top-contact-banner">
+            <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="row">
-                    <div> <img id="business-logo-navbar" src="img/family-first-insurance.png">
+                    <div id="top-company-name"> <img id="business-logo-navbar" src="img/family-first-insurance.png" />
                         Family First Insurance
                     </div>
                 </div>
             </div>
-            <div class="col p-2 col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <div><img id="phone-image-navbar" src="img/Telephone-PNG-Picture.png">503-313-1942</div>
+            <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div id="top-call-us"><img id="phone-image-navbar" src="img/phone.png" />503-313-1942</div>
             </div>
         </div>
         <!-- Banner -->
-        <div class="d-flex row" id="business-banner">
-            <div class="d-flex row" id="quote-row">
-                <div class="d-flex flex-col py-0 py-md-4 col-xs-12 col-sm-12 col-md-12 col-lg-6" id="quote-text">
-                    <div>Request Quote</div>
-                </div>
-                <div class="d-none d-lg-block flex-col py-0 py-lg-4 col-xs-0 col-sm-0 col-md-0 col-lg-6"
-                    id="company-logo">
-                    <img id="business-logo" src="img/family-first-insurance.png">
-                </div>
+        <div class="row mainbg">
+            <div class="col-xs-0 col-md-2 col-lg-2"></div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6" id="quote-text">
+                Request a Quote Today!
             </div>
+            <div class="col-xs-0 col-md-4 col-lg-0"></div>
+            <div class="d-none d-md-block d-lg-block py-0 py-lg-4 col-xs-0 col-lg-6" id="company-logo">
+                <img id="business-logo" src="img/family-first-insurance.png">
+            </div>
+        </div>
+        <!-- Tabs -->
+        <div class="row" id="business-banner">
             <div class="row">
                 <div class="col-xs-0 col-sm-1 col-md-2 col-lg-2 col-xl-2 g-0" id="form-tab-filler"></div>
                 <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 col-xl-8 g-0">
-                    <div class="d-flex row">
+                    <div class="row">
                         <nav class="navigation-tabs">
                             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <button class="nav-link active" id="nav-auto-tab" data-bs-toggle="tab"
@@ -72,7 +74,7 @@
                     <!-- Tabs -->
                     <!-- Forms -->
                     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-2 g-0" id="form-tab-filler-inside"></div>
-                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-8 g-0">
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-8 g-0 sectionpadding">
                         <div class="tab-content" id="nav-tabContent">
                             <!-- Auto -->
                             <div class="tab-pane fade show active" id="nav-auto" role="tabpanel"
@@ -199,8 +201,9 @@
                                     <div class="row g-0 p-2">
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 p-2"></div>
                                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 p-2">
-                                            <button type="submit" class="btn btn-success" onclick="submitAuto()">Get
-                                                Your Quote!</button>
+                                            <button type="submit" class="btn" id="get-your-quote"
+                                                onclick="submitAuto()">
+                                                Get Your Quote!</button>
                                         </div>
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 p-2"></div>
                                     </div>
@@ -323,7 +326,8 @@
                                     <div class="row g-0 p-2">
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 p-2"></div>
                                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 p-2">
-                                            <button type="submit" class="btn btn-success" onclick="submitHome()">Get
+                                            <button type="submit" class="btn" id="get-your-quote"
+                                                onclick="submitHome()">Get
                                                 Your Quote!</button>
                                         </div>
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 p-2"></div>
@@ -490,7 +494,7 @@
                                     <div class="row g-0 p-2">
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 p-2"></div>
                                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 p-2">
-                                            <button type="submit" class="btn btn-success p-2"
+                                            <button type="submit" class="btn p-2" id="get-your-quote"
                                                 onclick="submitCommercial()">Get Your Quote!</button>
                                         </div>
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 p-2"></div>
@@ -620,7 +624,8 @@
                                     <div class="row g-0 p-2">
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 p-2"></div>
                                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 p-2">
-                                            <button type="submit" class="btn btn-success" onclick="submitLife()">Get
+                                            <button type="submit" class="btn" id="get-your-quote"
+                                                onclick="submitLife()">Get
                                                 Your Quote!</button>
                                         </div>
                                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 p-2"></div>
@@ -809,35 +814,35 @@
                                 </div>
                             </div>
                         </div>
-                        <hr>
                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-2 g-0" id="form-tab-filler-inside"></div>
-                        <!-- Who insurance is offered through -->
-                        <div class="row p-2">
-                            <div class="Providers">Quality Insurance Through These Great Providers</div>
-                            <div class="d-flex row" id="logos">
-                                <img class="brand-logo p-1" src="img/symmetry.png" />
-                                <img class="brand-logo p-1" src="img/stillwater.png" />
-                                <img class="brand-logo p-1" src="img/kemper.png" />
-                                <img class="brand-logo p-1" src="img/branch.png" />
-                            </div>
-                            <div class="d-flex row" id="logos">
-                                <img class="brand-logo p-1" src="img/Nationwide-Logo.png" />
-                                <img class="brand-logo p-1" src="img/natgen.png" />
-                                <img class="brand-logo p-1" src="img/encompass.png" />
-                                <img class="brand-logo p-1" src="img/Allstate-Logo.png" />
-                            </div>
+                    </div>
+                    <!-- Who insurance is offered through -->
+                    <div class="row provider-row sectionpadding">
+                        <div class="col-xs-0 col-sm-2"></div>
+                        <div class="providers col-xs-12 col-sm-8">Quality Insurance Through These Great Providers</div>
+                        <div class="col-xs-0 col-sm-2"></div>
+                    </div>
+                    <div class="row provider-row">
+                        <div class="row" id="logos">
+                            <img class="brand-logo p-1" src="img/symmetry.png" />
+                            <img class="brand-logo p-1" src="img/stillwater.png" />
+                            <img class="brand-logo p-1" src="img/kemper.png" />
+                            <img class="brand-logo p-1" src="img/branch.png" />
                         </div>
-
-                        <hr>
+                        <div class="row" id="logos">
+                            <img class="brand-logo p-1" src="img/Nationwide-Logo.png" />
+                            <img class="brand-logo p-1" src="img/natgen.png" />
+                            <img class="brand-logo p-1" src="img/encompass-i.png" />
+                            <img class="brand-logo p-1" src="img/Allstate-Logo.png" />
+                        </div>
                     </div>
                     <!-- Javier's face -->
-                    <div class="row">
-                        <div class="d-flex col col-xs-6 col-sm-6 col-md-6 col-lg-6 p-2" id="javiers-face-text">
-                            Mi Promesa: <br>
-                            I will do my best to get you the lowest prices!
+                    <div class="row sectionpadding">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <img id="contact-img" src="img/owner_picture.png" />
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 p-2">
-                            <img width="200" src="img/owner_picture.png" />
+                        <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6 p-2" id="javiers-face-text">
+                            I never stop working to get <i>you</i> the best deals
                         </div>
                     </div>
                     <!-- Review -->
@@ -863,23 +868,23 @@
                             <div class="row py-2">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5" id="testimonial-container-left">
                                     <div class="row py-3 py-lg-5 text-center">
-                                        <div id="testimonial-name">Nic</div>
-                                        <div id="testimonial-text">geico helped me save 50% or more on my car
-                                            insurance
+                                        <div id="testimonial-name">Nicholas</div>
+                                        <div id="testimonial-text">I saved a ton of money with the insurance Javier
+                                            found me!
                                         </div>
                                     </div>
                                     <hr class="mx-5">
                                     <div class="row py-3 py-lg-5 text-center">
-                                        <div id="testimonial-name">Nic</div>
-                                        <div id="testimonial-text">geico helped me save 50% or more on my car
-                                            insurance
+                                        <div id="testimonial-name">Brandon</div>
+                                        <div id="testimonial-text">Javier never stops working hard to provide the best
+                                            service in town
                                         </div>
                                     </div>
                                     <hr class="mx-5">
                                     <div class="row py-3 py-lg-5  text-center">
-                                        <div id="testimonial-name">Nic</div>
-                                        <div id="testimonial-text">geico helped me save 50% or more on my car
-                                            insurance
+                                        <div id="testimonial-name">Jamie</div>
+                                        <div id="testimonial-text">I'm always able to reach out to Javier with questions
+                                            about my policy. The personal service means so much
                                         </div>
                                     </div>
                                 </div>
@@ -892,21 +897,24 @@
 
                         </div>
                         <div class="col-xs-0 col-sm-0 col-lg-0" id="placeholder-filler-right"></div>
-                        <hr>
                     </div>
                     <!-- Copy -->
-                    <div class="row">
-                        <div class="d-flex col col-xs-6 col-sm-6 col-md-6 col-lg-6 p-2" id="contact-javier">
-                            Contact Javier: <br>
-                            503-313-1942
+                    <div class="row provider-row sectionpadding">
+                        <div class="col-xs-12" id="contact-javier">
+                            <div class="fullrow contact-us-copy">Want to talk?</div>
+                            <div class="fullrow contact-us-copy">Call today!</div>
+                            <div class="fullrow bannernumber">503-313-1942</div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 p-2">
-                            <img src="img/owner_picture.png" id="contact-img" />
-                        </div>
-                        <hr>
                     </div>
                     <div class="row">
-                        <div id="info-text">"Se Habla Español."</div>
+                        <div id="info-text">Working hard in the heart of Newberg, <b>Family First Insurance</b> has been
+                            providing an exceptional customer experience purchasing and maintaining insurance for many
+                            years now. Time and time again, Javier is able to provide the personal touch that is missing
+                            from the lives of most buyers.<br><br><b>Family First Insurance</b> will never stop working
+                            for
+                            you. </br>
+                            <img src="img/family-first-insurance.png" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -921,18 +929,16 @@
                     <div class="text-center">
                         <div class="row py-1">
                             <div class="text-center">
-                                Family First Insurance •<a
+                                Family First Insurance • <a
                                     href="https://www.google.com/maps/place/1419+Parkside+Ct,+Newberg,+OR+97132/@45.3107777,-122.9799679,17z/data=!3m1!4b1!4m5!3m4!1s0x54954029b95f1e9b:0xd2b7578059ce72a9!8m2!3d45.3107777!4d-122.9799679">1419
                                     Parkside Ct Newberg, OR 97132
-                                </a>• Phone: 503-313-1942 • Fax: 503-487-1164 • Email:
+                                </a> • Phone: 503-313-1942 <br> Fax: 503-487-1164 • Email:
                                 javierdelaobailon@gmail.com
                             </div>
                         </div>
                         <div class="row py-1">
                             <div class="text-center">
-                                <a href="https://www.familyfirstinsurancejarbgllc.com/index.html">Family First
-                                    Insurance</a>
-                                • Copyright © 2022. All Rights Reserved.
+                                Copyright © 2022. All Rights Reserved.
                             </div>
                         </div>
                         <div class="row py-1">

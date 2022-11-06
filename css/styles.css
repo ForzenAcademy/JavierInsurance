@@ -2,20 +2,19 @@ body {
   background: black;
   color: white;
   font-family: 'Montserrat', serif !important;
-  font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
 }
 
 #top-contact-banner {
-  background-color: rgb(12, 55, 110);
+  background-color: #222222;
   justify-content: center;
   font-size: 2rem;
   font-weight: 600;
 }
 
 #business-banner {
-  background-color: rgb(162, 59, 114);
+  background-color: #06afef;
   justify-content: center;
   font-size: 4rem;
   font-weight: 700;
@@ -23,19 +22,20 @@ body {
 }
 
 #business-logo-navbar {
-  max-width: 4rem;
-  max-height: 4rem;
+  max-width: 3.5em;
+  max-height: 3.5em;
+  padding: 16px;
 }
 
 #phone-image-navbar {
-  max-width: 3rem;
-  max-height: 3rem;
-  margin-right: 1rem;
+  max-width: 2rem;
+  max-height: 2rem;
+  margin-right: 8px;
 }
 
 #javiers-face-text {
   align-self: center;
-  justify-content: center;
+  font-size: 3em;
 }
 
 #company-logo {
@@ -69,33 +69,37 @@ body {
   max-height: 100%;
 }
 
-#quote-row {
-  justify-content: center;
-}
-
 #logos {
   justify-content: center;
 }
 
 #info-text {
   text-align: center;
+  font-size: 1.5em;
+  padding: 48px;
 }
 
 .nav-link {
-  background-color: rgb(40, 117, 226) !important;
+  background-color: #111111 !important;
   color: rgb(150, 150, 150) !important;
-  border-color: rgb(12, 55, 110) !important;
-  font-size: 1.5rem;
+  border-color: #035370 !important;
+  font-size: 0.3em;
+}
+
+#get-your-quote {
+  background-color: #035370 !important;
+  color: white !important;
 }
 
 .nav-link.active {
-  background-color: rgb(29, 107, 215) !important;
-  color: rgb(255, 255, 255) !important;
+  background-color: #222222 !important;
+  color: white !important;
   font-weight: 800 !important;
+  border-color: transparent !important;
 }
 
 #forms {
-  background-color: rgb(63, 132, 229) !important;
+  background-color: #222222 !important;
   align-items: center;
 }
 
@@ -106,9 +110,9 @@ body {
 }
 
 #quote-text {
-  align-self: center;
-  width: fit-content;
-  height: fit-content;
+  text-align: center;
+  font-size: 4em;
+  background-color: #06AFEF;
 }
 
 #form-filler {
@@ -125,13 +129,13 @@ body {
 
 #footer-filler,
 #footer {
-  background-color: rgb(12, 55, 110);
+  background-color: #333333;
   font-size: medium;
   color: white;
 }
 
-.Providers {
-  font-size: 2rem;
+.providers {
+  font-size: 3em;
   font-weight: 600;
 }
 
@@ -187,20 +191,41 @@ body {
 }
 
 #contact-img {
-  max-width: 33rem;
+  max-width: 100%;
+  padding: 32px;
 }
 
-/* #review {
-  display: flex;
-} */
+#top-call-us {
+  font-size: 0.5em;
+}
 
-/* 
-<!--
-TODO:
-Written testimonials
-New copy for everything
-CSS finished
-Second page
-Google analytics
-Spanish
---> */
+#top-company-name {
+  font-size: 0.6em;
+}
+
+.provider-row {
+  background-color: #333333;
+}
+
+.fullrow {
+  width: 100%;
+  text-align: center;
+}
+
+.contact-us-copy {
+  font-size: 0.8em;
+}
+
+.bannernumber {
+  font-size: 2.0em;
+  color: #06AFEF;
+}
+
+.sectionpadding {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.mainbg {
+  background-color: #06AFEF;
+}
