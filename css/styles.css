@@ -118,10 +118,12 @@ body {
 #quote-text {
   text-align: center;
   font-size: 1em;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 #form-filler {
-  background-color: rgb(34, 24, 28);
+  background-color: #111111;
 }
 
 #form-filler-inside {
@@ -232,4 +234,16 @@ body {
 
 .mainbg {
   background-color: #06AFEF;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
