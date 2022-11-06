@@ -145,15 +145,7 @@ body {
 }
 
 #review {
-  font-size: x-large;
-}
-
-#testimonial-name {
-  font-size: xx-large;
-}
-
-#testimonial-text {
-  font-size: x-large;
+  font-size: 3em;
 }
 
 #review-hr-left,
@@ -164,14 +156,12 @@ body {
 }
 
 #review-stars {
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
-#star {
-  max-width: 3.5rem;
-}
+#star {}
 
 #testimonial-container-left {
   display: flex;
@@ -181,6 +171,7 @@ body {
 
 #testimonial-container-right {
   display: flex;
+  padding: 4em;
   flex-direction: column;
   justify-content: center;
 
@@ -191,6 +182,7 @@ body {
 }
 
 #testimonial-img {
+  justify-content: center;
   border-radius: 50%;
   border: 5px solid rgb(240, 240, 240);
 }
