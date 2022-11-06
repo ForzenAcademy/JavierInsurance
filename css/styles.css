@@ -119,17 +119,21 @@ body {
   color: black;
 }
 
-#testimonial-name {
-  font-size: large;
-}
-
 .Providers {
   font-size: 2vw;
   font-weight: 600;
 }
 
+#review {
+  font-size: x-large;
+}
+
+#testimonial-name {
+  font-size: xx-large;
+}
+
 #testimonial-text {
-  font-size: medium;
+  font-size: x-large;
 }
 
 #review-hr-left,
