@@ -2,34 +2,34 @@ body {
   background: black;
   color: white;
   font-family: 'Montserrat', serif !important;
-  font-size: 1vw;
+  font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
 }
 
 #top-contact-banner {
-  background-color: rgb(34, 50, 82);
+  background-color: rgb(12, 55, 110);
   justify-content: center;
-  font-size: 2vw;
+  font-size: 2rem;
   font-weight: 600;
 }
 
 #business-banner {
-  background-color: rgb(90, 129, 207);
+  background-color: rgb(162, 59, 114);
   justify-content: center;
-  font-size: 4vw;
+  font-size: 4rem;
   font-weight: 700;
 }
 
 #business-logo-navbar {
-  max-width: 4vw;
-  max-height: 4vw;
+  max-width: 4rem;
+  max-height: 4rem;
 }
 
 #phone-image-navbar {
-  max-width: 3vw;
-  max-height: 3vw;
-  margin-right: 1vw;
+  max-width: 3rem;
+  max-height: 3rem;
+  margin-right: 1rem;
 }
 
 #javiers-face-text {
@@ -38,27 +38,27 @@ body {
 }
 
 #company-logo {
-  max-width: 10vw;
-  max-height: 10vw;
+  max-width: 10rem;
+  max-height: 10rem;
 }
 
 #contact-javier {
   align-self: center;
   justify-content: center;
-  font-size: 3vw;
+  font-size: 3rem;
 }
 
 #testimonial-name {
   align-self: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 3vw;
+  font-size: 3rem;
 }
 
 #testimonial-text {
   align-self: center;
   justify-content: center;
-  font-size: 2vw;
+  font-size: 2rem;
 }
 
 .brand-logo {
@@ -68,24 +68,31 @@ body {
   max-height: 100%;
 }
 
+#quote-row {
+  justify-content: center;
+}
+
 #logos {
   justify-content: center;
 }
 
 .nav-link {
-  background-color: rgb(35, 35, 120) !important;
-  color: white;
-  font-size: 1.5vw;
+  background-color: rgb(40, 117, 226) !important;
+  color: rgb(150, 150, 150) !important;
+  border-color: rgb(12, 55, 110) !important;
+  font-size: 1.5rem;
   width: stretch;
   height: fit-content;
 }
 
 .nav-link.active {
-  background-color: rgb(20, 20, 70) !important;
+  background-color: rgb(29, 107, 215) !important;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 800 !important;
 }
 
 #forms {
-  background-color: rgb(35, 35, 120) !important;
+  background-color: rgb(63, 132, 229) !important;
 }
 
 #company-logo {
@@ -101,26 +108,26 @@ body {
 }
 
 #form-filler {
-  background-color: rgb(34, 50, 82);
+  background-color: rgb(34, 24, 28);
 }
 
 #form-filler-inside {
-  background-color: rgb(35, 35, 120);
+  background-color: rgb(51, 124, 160);
 }
 
-#form-tab-filler {
-  background-color: rgb(90, 129, 207);
+.navigation-tabs {
+  display: inline-block
 }
 
 #footer-filler,
 #footer {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(12, 55, 110);
   font-size: medium;
-  color: black;
+  color: white;
 }
 
 .Providers {
-  font-size: 2vw;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -150,7 +157,7 @@ body {
 }
 
 #star {
-  max-width: 3.5vw;
+  max-width: 3.5rem;
 }
 
 #testimonial-container-left {
@@ -166,13 +173,17 @@ body {
 
 }
 
+.btn-primary {
+  background-color: rgb(93, 152, 233);
+}
+
 #testimonial-img {
   border-radius: 50%;
   border: 5px solid rgb(240, 240, 240);
 }
 
 #contact-img {
-  max-width: 33vw;
+  max-width: 33rem;
 }
 
 /* #review {
