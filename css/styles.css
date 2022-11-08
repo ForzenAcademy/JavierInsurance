@@ -65,7 +65,7 @@ body {
   font-size: 3em;
 }
 
-#testimonial-text {
+.testimonial-text {
   align-self: center;
   justify-content: center;
   color: #cccccc;
@@ -122,7 +122,7 @@ body {
   font-size: 0.3em;
 }
 
-#get-your-quote {
+.btn {
   background-color: #035370 !important;
   color: white !important;
 }
@@ -141,12 +141,6 @@ body {
 
 .sectionmargin {
   margin-bottom: 64px;
-}
-
-#company-logo {
-  align-self: center;
-  width: stretch;
-  height: fit-content;
 }
 
 p span {
@@ -207,8 +201,6 @@ p span {
   justify-content: center;
 }
 
-#star {}
-
 #testimonial-container-left {
   display: flex;
   flex-direction: column;
@@ -221,10 +213,6 @@ p span {
   flex-direction: column;
   justify-content: center;
 
-}
-
-.btn-primary {
-  background-color: rgb(93, 152, 233);
 }
 
 #testimonials {
@@ -261,38 +249,22 @@ p span {
   padding: 16px;
 }
 
+.mobile-label {
+  font-size: 1.5em;
+}
+
 @media screen and (min-width: 576px) {
-  .auto-tab-img {
+  .tab-img {
     display: none;
   }
 
-  .home-tab-img {
-    display: none;
-  }
-
-  .life-tab-img {
-    display: none;
-  }
-
-  .commercial-tab-img {
+  .mobile-label {
     display: none;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .auto-tab-text {
-    display: none;
-  }
-
-  .home-tab-text {
-    display: none;
-  }
-
-  .life-tab-text {
-    display: none;
-  }
-
-  .commercial-tab-text {
+  .tab-text {
     display: none;
   }
 }
@@ -359,4 +331,17 @@ input[type=number] {
 
 #botimg {
   margin-top: 64px;
+}
+
+#flag-icon {
+  max-width: 60px;
+  max-height: 30px;
+  justify-content: center;
+}
+
+#flag-row {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.5em;
+  white-space: nowrap;
 }
