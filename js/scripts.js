@@ -462,8 +462,6 @@ function tabClick(tab) {
 
 function toSpanish() {
 
-    console.log("Translate Clicked!");
-
     let containerArray = [
         // Quote Banner Text
         document.getElementById("quote-text"),
@@ -766,7 +764,7 @@ function toSpanish() {
         errorContainerArray[i].innerHTML = spanishErrorText
     }
 
-    document.getElementById("flag-row").innerHTML = '<img id="flag-icon" onclick="toEnglish()" src="img/en-flag.png" /> en'
+    document.getElementById("flag-row").innerHTML = '<div class="row"><div class="col-12"><img id="flag-icon" src="img/es-flag.png" /></div><div class="col-12">es</div></div>'
 }
 
 let holdingTextArray = []
@@ -960,7 +958,7 @@ function toEnglish() {
         errorContainerArray[i].innerHTML = "Field Required"
     }
 
-    document.getElementById("flag-row").innerHTML = '<img id="flag-icon" onclick="toSpanish()" src="img/es-flag.png" /> es'
+    document.getElementById("flag-row").innerHTML = '<div class="row"><div class="col-12"><img id="flag-icon" src="img/en-flag.png" /></div><div class="col-12">en</div></div>'
 
 }
 
@@ -1108,5 +1106,16 @@ function getLang() {
         if (lang == spanishOptions[i]) {
             toSpanish()
         }
+    }
+}
+
+language = 0
+function swapLanguage() {
+    if (language == 0) {
+        toSpanish()
+        language = 1
+    } else {
+        toEnglish()
+        language = 0
     }
 }
