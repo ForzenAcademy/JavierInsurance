@@ -1,6 +1,9 @@
 let zipTest = /(^\d{5}$)|(^\d{5}-\d{4}$)/
 let phoneTest = /^[+]?[\s./0-9]*[(]?[0-9]{1,4}[)]?[-\s./0-9]*$/
 let emailTest = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+function homepage() {
+    window.location.href = "index.html";
+}
 function submitAuto() {
 
     let fName = document.getElementById("first-name-auto").value
@@ -454,6 +457,16 @@ function aboutUs() {
 
     window.location.href = "https://www.familyfirstinsurancejarbgllc.com/index.html";
 }
+
+function spanishPage() {
+    gtag('event', "link_click", {
+        'page_from': 'Home',
+        'page_to': "Spanish Home",
+    })
+
+    window.location.href = "index-es.html";
+}
+
 function tabClick(tab) {
     gtag('event', 'tab_click', {
         'tab': tab
@@ -522,6 +535,8 @@ function toSpanish() {
 
         // Footer
         document.getElementById("copyright"),
+        document.getElementById("footer-info"),
+        document.getElementById("about-us-footer"),
     ]
     let spanishTextArray = [
         // Tabs and Above
@@ -537,14 +552,14 @@ function toSpanish() {
         "Nombre", // Name
         "Fecha de nacimiento", // Date of Birth
         "Dirección", // Address
-        "Obtenga su cotización", // Get Your Quote
+        "¡Obtenga su cotización!", // Get Your Quote
 
         // Home
         "Seguro de Hogar", // Home Insurance
         "Nombre", // Name
         "Fecha de nacimiento", // Date of Birth
         "Dirección", // Address
-        "Obtenga su cotización", // Get Your Quote
+        "¡Obtenga su cotización!", // Get Your Quote
 
         // Commercial
         "Seguro de negocio", // Business Insurance
@@ -552,25 +567,25 @@ function toSpanish() {
         "Nombre", // Name
         "Fecha de nacimiento", // Date of Birth
         "Dirección", // Address
-        "Obtenga su cotización", // Get Your Quote
+        "¡Obtenga su cotización!", // Get Your Quote
 
         // Life
         "Seguro de vida", // Life Insurance
         "Nombre", // Name
         "Fecha de nacimiento", // Date of Birth
         "Dirección", // Address
-        "Obtenga su cotización", // Get Your Quote
+        "¡Obtenga su cotización!", // Get Your Quote
         "Historial médico", // Medical History
 
         // Below Forms
         "Seguro de calidad a través de estos excelentes proveedores", // Providers Line
-        "Garantía de Javier:<br> <i>'¡Nunca dejo de trabajar para conseguirte las mejores ofertas!'</i>", // Gurantee
+        'Garantía de Javier:<br> <i>"¡Nunca dejo de trabajar para conseguirte las mejores ofertas!"</i>', // Gurantee
         "Servicio de 5 estrellas garantizado", // 5 Star Service
 
         // Testimonials
-        "¡Ahorré un montón de dinero con el seguro que Javier me encontró!",
-        "Javier nunca deja de trabajar duro para proporcionar el mejor servicio en la ciudad",
-        "Siempre puedo comunicarme con Javier si tengo preguntas sobre mi póliza. El servicio personalizado significa mucho",
+        '"¡Ahorré un montón de dinero con el seguro que Javier me encontró!"',
+        '"Javier nunca deja de trabajar duro para proporcionar el mejor servicio en la ciudad"',
+        '"Siempre puedo comunicarme con Javier si tengo preguntas sobre mi póliza. El servicio personalizado significa mucho"',
 
         // Contact us
         "¿Querer hablar?",
@@ -578,7 +593,10 @@ function toSpanish() {
 
         // Info Text
         'Trabajando arduamente en el corazón de Newberg, <b> Family First Insurance </b> ha brindado una experiencia excepcional al cliente al comprar y mantener un seguro durante muchos años. Una y otra vez, Javier puede brindar el toque personal que falta en la vida de la mayoría de los compradores. <br><br><b> Family First Insurance </b> nunca dejará de trabajar para usted. </br> <img id="botimg" src="img/family-first-insurance.png" />', // wall of text
-        "Copyright © 2022. Todos los derechos reservados.", // Copyright
+        "Derechos de autor © 2022. Todos los derechos reservados.", // Copyright
+        'Family First Insurance • <a href="javascript:address();">1419 Parkside Ct Newberg, OR 97132</a> • Número de teléfono: 503-313-1942 <br> Fax: 503-487-1164 • Correo electrónico:javierdelaobailon@gmail.com<br>Javier De La O Bailon', // Footer Contact Info
+        'Sobre nosotros', // About Us
+
     ]
     let placeholderContainerArray = [
         // Auto
@@ -946,6 +964,8 @@ function toEnglish() {
 
         // Footer
         document.getElementById("copyright"),
+        document.getElementById("footer-info"),
+        document.getElementById("about-us-footer"),
     ]
 
     for (let i = 0; i < containerArray.length; i++) {
@@ -1081,6 +1101,8 @@ function init() {
 
         // Footer
         document.getElementById("copyright"),
+        document.getElementById("footer-info"),
+        document.getElementById("about-us-footer"),
     ]
 
     for (let i = 0; i < containerArray.length; i++) {
