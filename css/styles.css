@@ -10,6 +10,14 @@ body {
   color: red;
 }
 
+.primary-section {
+  background-color: #333333;
+}
+
+.secondary-section {
+  background-color: #444444;
+}
+
 #top-contact-banner {
   background-color: #222222;
   font-size: 2em;
@@ -38,9 +46,10 @@ body {
   margin-right: 8px;
 }
 
-#javiers-face-text {
+#javiers-face-text,
+#google-maps-text {
   align-self: center;
-  font-size: 3em;
+  font-size: 3em !important;
   padding: 16px;
 }
 
@@ -110,11 +119,17 @@ body {
   width: 17%;
 }
 
-#info-text {
+#info-text,
+#about-us-text {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
   padding: 48px;
 }
+
+#google-maps-text {
+  justify-content: center;
+}
+
 
 .nav-link {
   background-color: #111111 !important;
@@ -148,7 +163,7 @@ p span {
   display: block;
 }
 
-#quote-text {
+#banner-text {
   text-align: center;
   font-size: 1em;
   padding-top: 16px;
@@ -156,7 +171,9 @@ p span {
   white-space: nowrap;
 }
 
-#form-filler {
+
+
+#page-filler {
   background-color: #111111;
 }
 
@@ -258,6 +275,7 @@ p span {
   font-size: 0.6em;
   float: left;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .provider-row {
@@ -279,6 +297,11 @@ p span {
 
 .contact-us-copy {
   font-size: 0.8em;
+}
+
+#se-habla {
+  font-size: 4.0em;
+  color: #06AFEF;
 }
 
 .bannernumber {
@@ -320,14 +343,27 @@ input[type=number] {
 }
 
 #flag-row {
+  cursor: pointer;
   margin-top: 8px;
   text-align: center;
   font-size: 0.5em;
   white-space: nowrap;
 }
 
+@media screen and (max-width: 360px) {
+  #top-company-name {
+    display: none;
+  }
+}
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width:361px) {
+  #business-logo-navbar-small {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 577px) {
   .tab-img {
     display: none;
   }
@@ -335,11 +371,18 @@ input[type=number] {
   .mobile-label {
     display: none;
   }
+}
 
-  #business-logo-navbar-small {
-    display: none;
+@media screen and (max-width: 590px) {
 
+  .bannernumber {
+    font-size: 1.5em;
   }
+
+  #se-habla {
+    font-size: 3em;
+  }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -347,9 +390,7 @@ input[type=number] {
     display: none;
   }
 
-  #top-company-name {
-    display: none;
-  }
+
 
   #business-logo-navbar-small {
     max-width: 3.5em;
@@ -357,11 +398,10 @@ input[type=number] {
     padding: 16px;
     font-size: 0.6em;
     white-space: nowrap;
+    cursor: pointer;
   }
 
-  .bannernumber {
-    font-size: 1.5em;
-  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -370,11 +410,21 @@ input[type=number] {
   #top-call-us-column {
     display: none;
   }
+
+  #info-text,
+  #about-us-text {
+    font-size: 1.5em;
+    padding: 24px;
+  }
 }
 
 @media screen and (max-width: 440px) {
 
   .bannernumber {
     font-size: 1.0em;
+  }
+
+  #se-habla {
+    font-size: 2em;
   }
 }
